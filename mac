@@ -1,0 +1,40 @@
+#!/bin/sh
+
+set -eu
+
+enabled() { type $1 > /dev/null 2>&1; }
+require() { if ! enabled $1; then echo "Please install $1."; exit 1; fi }
+
+require git
+
+SETUP=$HOME/.setup
+
+if ! [ -d $SETUP ]; then
+	git clone https://github.com/hoto17296/setup.git $SETUP
+fi
+
+if ! enabled brew; then
+	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+fi
+brew bundle $SETUP
+
+DOT=$SETUP/dotfiles
+dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DOT/$1 $HOME/.$1; fi }
+
+dotalias vimperator
+dotalias vimperatorrc
+dotalias gitconfig
+dotalias gitignore
+dotalias gemrc
+
+require vim
+BUNDLE=$HOME/.vim/bundle
+dotalias vimrc
+mkdir -p $BUNDLE
+git clone https://github.com/Shougo/neobundle.vim $BUNDLE/neobundle.vim
+$BUNDLE/neobundle.vim/bin/neoinstall
+
+require zsh
+dotalias zsh
+dotalias zshrc
+chsh -s `which zsh`

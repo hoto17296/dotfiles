@@ -1,0 +1,20 @@
+[alias]
+  st = status -s -b
+  cm = commit -a
+  df = diff --color-words
+  br = branch
+  co = checkout
+  cl = clone
+  ps = push
+  pl = pull
+  rb = rebase
+  gr = grep
+  lg = log --stat
+  tree = log --graph --decorate --oneline
+  hist = log -p
+[diff]
+  renames = true
+[core]
+  excludesfile = ~/.gitignore
+[include]
+  path = ~/.gitconfig.local

@@ -19,6 +19,8 @@ setopt nobeep  # beep音鳴らさない
 autoload -Uz compinit
 compinit
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を区別しない
+
 
 # 色
 

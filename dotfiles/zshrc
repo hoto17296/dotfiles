@@ -117,6 +117,13 @@ if [[ -d "$HOME/.plenv" ]]; then
 fi
 
 
+# peco
+
+if [ -x "`which peco`" ]; then
+  alias cb='git checkout $(git branch | peco)'
+fi
+
+
 # OS固有設定
 
 case "${OSTYPE}" in

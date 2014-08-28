@@ -17,6 +17,9 @@ install figlet
 install rmtrash
 install ttytter
 
+tap peco/peco
+install peco
+
 tap caskroom/cask
 tap caskroom/versions
 install brew-cask

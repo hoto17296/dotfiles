@@ -135,7 +135,7 @@ function peco-select-history() {
 
 if [ -x "`which peco`" ]; then
   # ブランチ移動
-  alias cb='git checkout $(git branch | peco)'
+  alias gb='git checkout $(git branch | peco)'
   # 履歴のインクリメンタルサーチ
   zle -N peco-select-history
   bindkey '^r' peco-select-history

@@ -4,6 +4,7 @@
   df = diff --color-words
   br = branch
   co = checkout
+  cb = checkout -b
   cl = clone
   ps = push
   pl = pull

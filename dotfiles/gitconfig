@@ -10,6 +10,7 @@
   pl = pull
   rb = rebase
   gr = grep
+  ss = stash
   lg = log --stat
   tree = log --graph --decorate --oneline
   hist = log -p

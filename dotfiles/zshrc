@@ -155,3 +155,8 @@ linux*)
   alias l='ls -Flah --color'
   ;;
 esac
+
+
+# マシン固有設定
+
+if [ -f ~/.zshrc.local ]; then source ~/.zshrc.local; fi

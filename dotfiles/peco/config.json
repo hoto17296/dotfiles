@@ -1,0 +1,7 @@
+{
+  "Style": {
+    "Selected": ["white", "on_blue"],
+    "Query": ["magenta", "bold"],
+    "Matched": ["cyan", "bold"]
+  }
+}

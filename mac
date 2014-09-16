@@ -26,6 +26,7 @@ dotalias vimperatorrc
 dotalias gitconfig
 dotalias gitignore
 dotalias gemrc
+dotalias peco
 
 require vim
 BUNDLE=$HOME/.vim/bundle

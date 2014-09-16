@@ -120,17 +120,21 @@ fi
 # peco
 
 function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER" --prompt "HISTORY>")
-    CURSOR=$#BUFFER
-    zle clear-screen
+  local tac
+  if which tac > /dev/null; then
+      tac="tac"
+  else
+      tac="tail -r"
+  fi
+  BUFFER=$(history -n 1 | eval $tac | peco --query "$LBUFFER" --prompt "HISTORY>")
+  CURSOR=$#BUFFER
+  zle clear-screen
+}
+
+function peco-select-file() {
+  BUFFER="$LBUFFER$(find . -type f | peco --prompt 'FILE>')"
+  CURSOR=$#BUFFER
+  zle clear-screen
 }
 
 if [ -x "`which peco`" ]; then
@@ -139,6 +143,9 @@ if [ -x "`which peco`" ]; then
   # 履歴のインクリメンタルサーチ
   zle -N peco-select-history
   bindkey '^r' peco-select-history
+  # ファイル選択
+  zle -N peco-select-file
+  bindkey '^f' peco-select-file
 fi
 
 

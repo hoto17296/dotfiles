@@ -132,7 +132,7 @@ function peco-select-history() {
 }
 
 function peco-select-file() {
-  BUFFER="$LBUFFER$(find . -type f | peco --prompt 'FILE>')"
+  BUFFER="$LBUFFER$(find . | peco --prompt 'FILE>')"
   CURSOR=$#BUFFER
   zle clear-screen
 }

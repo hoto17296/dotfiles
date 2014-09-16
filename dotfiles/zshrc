@@ -128,14 +128,14 @@ function peco-select-history() {
     fi
     BUFFER=$(history -n 1 | \
         eval $tac | \
-        peco --query "$LBUFFER")
+        peco --query "$LBUFFER" --prompt "HISTORY>")
     CURSOR=$#BUFFER
     zle clear-screen
 }
 
 if [ -x "`which peco`" ]; then
   # ブランチ移動
-  alias gb='git checkout $(git branch | peco)'
+  alias gb='git checkout $(git branch | peco --prompt "GIT BRANCH>")'
   # 履歴のインクリメンタルサーチ
   zle -N peco-select-history
   bindkey '^r' peco-select-history

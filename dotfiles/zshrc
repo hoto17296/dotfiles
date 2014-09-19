@@ -14,6 +14,11 @@ setopt correct # typo補完
 setopt nobeep  # beep音鳴らさない
 
 
+# パスを読み込み
+
+if [ -f ~/.zshrc_path.local ]; then source ~/.zshrc_path.local; fi
+
+
 # 補完
 
 autoload -Uz compinit

@@ -7,6 +7,7 @@ install wget
 install tree
 install ag
 install rbenv ruby-build
+install rbenv-default-gems
 install plenv perl-build
 install node
 install mysql

@@ -1,1 +1,3 @@
 dotfiles/vimperator/info/*
+dotfiles/rbenv/*
+!dotfiles/rbenv/default-gems

@@ -152,7 +152,7 @@ function peco-select-path() {
   zle clear-screen
 }
 
-if [ -x "`which peco`" ]; then
+if [ -x "`which peco 2> /dev/null`" ]; then
   # ブランチ移動
   alias gb='git checkout $(git branch | peco --prompt "GIT BRANCH>")'
   # 履歴のインクリメンタルサーチ

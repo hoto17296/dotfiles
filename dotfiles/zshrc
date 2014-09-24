@@ -153,9 +153,12 @@ function peco-path() {
 }
 
 function peco-branch() {
-  local branch="$(git branch | peco --prompt 'GIT BRANCH>')"
-  if [ "$branch" -eq "" ]; then return; fi
-  git checkout branch
+  local branch="$(git branch 2> /dev/null | peco --prompt 'GIT BRANCH>' | tr -d ' *')"
+  if [ -n "$branch" ]; then
+    echo "git checkout $branch"
+    git checkout $branch
+  fi
+  zle reset-prompt
 }
 
 if [ -x "`which peco 2> /dev/null`" ]; then

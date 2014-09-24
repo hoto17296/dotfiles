@@ -125,7 +125,7 @@ fi
 
 # peco
 
-function peco-select-history() {
+function peco-history() {
   local tac
   if which tac > /dev/null; then
       tac="tac"
@@ -137,7 +137,7 @@ function peco-select-history() {
   zle clear-screen
 }
 
-function peco-select-path() {
+function peco-path() {
   local filepath="$(find . | grep -v '/\.' | peco --prompt 'PATH>')"
   if [ "$LBUFFER" -eq "" ]; then
     if [ -d "$filepath" ]; then
@@ -163,11 +163,11 @@ if [ -x "`which peco 2> /dev/null`" ]; then
   zle -N peco-branch
   bindkey '^b' peco-branch
   # 履歴のインクリメンタルサーチ
-  zle -N peco-select-history
-  bindkey '^r' peco-select-history
+  zle -N peco-history
+  bindkey '^r' peco-history
   # ファイル選択
-  zle -N peco-select-path
-  bindkey '^f' peco-select-path
+  zle -N peco-path
+  bindkey '^f' peco-path
 fi
 
 

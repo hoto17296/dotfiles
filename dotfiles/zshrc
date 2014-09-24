@@ -152,9 +152,16 @@ function peco-select-path() {
   zle clear-screen
 }
 
+function peco-branch() {
+  local branch="$(git branch | peco --prompt 'GIT BRANCH>')"
+  if [ "$branch" -eq "" ]; then return; fi
+  git checkout branch
+}
+
 if [ -x "`which peco 2> /dev/null`" ]; then
   # ブランチ移動
-  alias gb='git checkout $(git branch | peco --prompt "GIT BRANCH>")'
+  zle -N peco-branch
+  bindkey '^b' peco-branch
   # 履歴のインクリメンタルサーチ
   zle -N peco-select-history
   bindkey '^r' peco-select-history

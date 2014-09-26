@@ -72,9 +72,9 @@ set clipboard=unnamed,autoselect
 set cursorline
 highlight CursorLine ctermbg=Black
 
-" 行末のスペースを可視化する
+" タブと行末スペースを可視化する
 set list
-set listchars=trail:~
+set listchars=tab:\:\ ,trail:~
 
 " セミコロンでもコマンド使えるようにする
 noremap ; :

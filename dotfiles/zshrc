@@ -143,7 +143,7 @@ function peco-path() {
     if [ -d "$filepath" ]; then
       BUFFER="cd $filepath"
     elif [ -f "$filepath" ]; then
-      BUFFER="vim $filepath"
+      BUFFER="$EDITOR $filepath"
     fi
   else
     BUFFER="$LBUFFER$filepath"

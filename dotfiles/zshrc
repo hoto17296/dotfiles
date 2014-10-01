@@ -83,7 +83,7 @@ alias gps='git push origin $(current_branch)'
 
 # プロンプト
 
-function rprompt-git-current-branch {
+function git-current-branch {
   local name st color gitdir action
   if [[ "$PWD" =~ '/¥.git(/.*)?$' ]]; then return; fi
   name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
@@ -102,8 +102,15 @@ function rprompt-git-current-branch {
   echo "$color($name)%f%b"
 }
 
+function force-alphanumeric {
+  case "${OSTYPE}" in
+  darwin*)
+    osascript -e 'tell application "System Events" to key code {102}'
+  esac
+}
+
 local face="%(?:%F{green}(^_^):%F{red}(>_<%)%s)%f"
-PROMPT='${face}%M:%c$(rprompt-git-current-branch)$ '
+PROMPT='${face}%M:%c$(git-current-branch)$(force-alphanumeric)$ '
 SPROMPT='%F{yellow}(?_?)%fもしかして: %B%r%b [y/N/a/e]? '
 RPROMPT='`date +"%Y/%m/%d(%a) %k:%M:%S"`'
 

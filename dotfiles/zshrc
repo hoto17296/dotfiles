@@ -83,6 +83,15 @@ alias gps='git push origin $(current_branch)'
 
 # プロンプト
 
+# プロンプト表示前に実行される
+function precmd {
+  case "${OSTYPE}" in
+  darwin*)
+    # 入力ソースを 英数 に切り替え
+    osascript -e 'tell application "System Events" to key code {102}'
+  esac
+}
+
 function git-current-branch {
   local name st color gitdir action
   if [[ "$PWD" =~ '/¥.git(/.*)?$' ]]; then return; fi
@@ -102,15 +111,8 @@ function git-current-branch {
   echo "$color($name)%f%b"
 }
 
-function force-alphanumeric {
-  case "${OSTYPE}" in
-  darwin*)
-    osascript -e 'tell application "System Events" to key code {102}'
-  esac
-}
-
 local face="%(?:%F{green}(^_^):%F{red}(>_<%)%s)%f"
-PROMPT='${face}%M:%c$(git-current-branch)$(force-alphanumeric)$ '
+PROMPT='${face}%M:%c$(git-current-branch)$ '
 SPROMPT='%F{yellow}(?_?)%fもしかして: %B%r%b [y/N/a/e]? '
 RPROMPT='`date +"%Y/%m/%d(%a) %k:%M:%S"`'
 

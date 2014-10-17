@@ -127,6 +127,9 @@ inoremap <expr><C-y> neocomplcache#close_popup()
 " 補完をキャンセル
 inoremap <expr><C-e> neocomplcache#cancel_popup()
 
+" jjでインサートモードを抜ける
+inoremap jj <ESC>
+
 " カーソルキーで補完候補を表示しない
 let g:neocomplcache_enable_insert_char_pre = 1
 

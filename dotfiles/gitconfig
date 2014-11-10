@@ -6,6 +6,7 @@
   co = checkout
   cb = checkout -b
   cl = clone
+  ft = fetch
   ps = push
   pl = pull
   rb = rebase

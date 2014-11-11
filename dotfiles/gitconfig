@@ -13,6 +13,7 @@
   gr = grep
   ss = stash
   lg = log --stat
+  amn = commit -a --amend --no-edit
   tree = log --graph --decorate --oneline
   hist = log -p
 [diff]

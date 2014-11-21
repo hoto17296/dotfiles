@@ -118,7 +118,9 @@ autoload -Uz add-zsh-hook
 function force-alphanumeric {
   case "${OSTYPE}" in
   darwin*)
-    osascript -e 'tell application "System Events" to key code {102}'
+    # 「英数」キーを押す
+    # 若干重いので サブシェル + バックグラウンド で実行する
+    (osascript -e 'tell application "System Events" to key code {102}' &)
   esac
 }
 add-zsh-hook precmd force-alphanumeric

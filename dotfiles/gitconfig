@@ -16,6 +16,7 @@
   amn = commit -a --amend --no-edit
   tree = log --graph --decorate --oneline
   hist = log -p
+  recent-branch = for-each-ref --format='%(refname:short)' --sort=-committerdate refs/heads
 [diff]
   renames = true
 [core]

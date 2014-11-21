@@ -147,35 +147,36 @@ function peco-history() {
   fi
   BUFFER=$(history -n 1 | eval $tac | peco --query "$LBUFFER" --prompt "HISTORY>")
   CURSOR=$#BUFFER
-  zle clear-screen
 }
 
 function peco-path() {
   local filepath="$(find . | grep -v '/\.' | peco --prompt 'PATH>')"
-  if [ "$LBUFFER" -eq "" ]; then
+  if [ -z "$filepath" ]; then return; fi
+  if [ -n "$LBUFFER" ]; then
+    BUFFER="$LBUFFER$filepath"
+  else
     if [ -d "$filepath" ]; then
       BUFFER="cd $filepath"
     elif [ -f "$filepath" ]; then
       BUFFER="$EDITOR $filepath"
     fi
-  else
-    BUFFER="$LBUFFER$filepath"
   fi
   CURSOR=$#BUFFER
-  zle clear-screen
 }
 
 function peco-branch() {
-  local branch="$(git branch 2> /dev/null | peco --prompt 'GIT BRANCH>' | tr -d ' *')"
-  if [ -n "$branch" ]; then
-    echo "git checkout $branch"
-    git checkout $branch
+  local branch="$(git recent-branch 2> /dev/null | peco --prompt 'GIT BRANCH>')"
+  if [ -z "$branch" ]; then return; fi
+  if [ -n "$LBUFFER" ]; then
+    BUFFER="$LBUFFER$branch"
+  else
+    BUFFER="git checkout $branch"
   fi
-  zle reset-prompt
+  CURSOR=$#BUFFER
 }
 
 if [ -x "`which peco 2> /dev/null`" ]; then
-  # ブランチ移動
+  # ブランチ選択
   zle -N peco-branch
   bindkey '^b' peco-branch
   # 履歴のインクリメンタルサーチ

@@ -53,6 +53,34 @@ alias ssh='ext-ssh'
 alias s='ext-ssh'
 
 
+# ディレクトリ移動時にタブのタイトルにディレクトリ名を表示する
+
+function set-term-tab-title-dirname {
+  set-term-tab-title $(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
+}
+add-zsh-hook chpwd set-term-tab-title-dirname
+set-term-tab-title-dirname
+
+
+# ディレクトリ移動時に ls の結果を表示する
+# http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
+
+function ls-chpwd {
+  local ls_result
+  ls_result=$(CLICOLOR_FORCE=1 COLUMNS=$COLUMNS ls -CGF)
+  local ls_lines=$(echo "$ls_result" | wc -l | tr -d ' ')
+  if [ $ls_lines -gt 10 ]; then
+    echo "$ls_result" | head -n 5
+    echo ' :'
+    echo "$ls_result" | tail -n 5
+    echo "$(ls -1 | wc -l | tr -d ' ') files exist"
+  else
+    echo "$ls_result"
+  fi
+}
+add-zsh-hook chpwd ls-chpwd
+
+
 # コマンドを実行するたびに英数モードに切り替える
 
 function force-alphanumeric {

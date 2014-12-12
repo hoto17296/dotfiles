@@ -116,7 +116,7 @@ fi
 
 # peco
 
-if [ -x "`which peco 2> /dev/null`" ]; then
+if type peco > /dev/null 2>&1; then
   source $HOME/.zshrc.peco
 fi
 

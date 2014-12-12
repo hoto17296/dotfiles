@@ -96,4 +96,6 @@ add-zsh-hook precmd force-alphanumeric
 
 # rm でゴミ箱に移動
 
-if [ -x "`which rmtrash`" ]; then alias rm='rmtrash'; fi
+if type rmtrash > /dev/null 2>&1; then
+  alias rm='rmtrash'
+fi

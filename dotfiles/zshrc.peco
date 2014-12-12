@@ -2,10 +2,10 @@
 
 function peco-history() {
   local tac
-  if which tac > /dev/null; then
-      tac="tac"
+  if type tac > /dev/null 2>&1; then
+    tac="tac"
   else
-      tac="tail -r"
+    tac="tail -r"
   fi
   BUFFER=$(history -n 1 | eval $tac | peco --query "$LBUFFER" --prompt "HISTORY>")
   CURSOR=$#BUFFER

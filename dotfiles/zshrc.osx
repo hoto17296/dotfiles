@@ -4,12 +4,12 @@ alias l='ls -GFlah'
 export LSCOLORS=gxfxcxdxbxegedabagacag
 
 
-# sshするときに背景色を変える
+# iTerm 関連
 
 function set-term-bgcolor {
-  local R=$(($1*255))
-  local G=$(($2*255))
-  local B=$(($3*255))
+  local R=$(($1*257))
+  local G=$(($2*257))
+  local B=$(($3*257))
   osascript <<EOF
     tell application "iTerm"
       tell the current terminal
@@ -21,15 +21,36 @@ function set-term-bgcolor {
 EOF
 }
 
-function color-ssh {
-  set-term-bgcolor 0 0 64
-  \ssh $@
-  set-term-bgcolor 0 0 0
+function set-term-tab-title {
+  echo -ne "\033]0;$1\007"
 }
-compdef _ssh color-ssh=ssh
 
-alias ssh='color-ssh'
-alias s='color-ssh'
+function set-term-tab-color {
+  echo -ne "\033]6;1;bg;red;brightness;$1\a"
+  echo -ne "\033]6;1;bg;green;brightness;$2\a"
+  echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+function reset-term-tab-color {
+  echo -ne "\033]6;1;bg;*;default\a"
+}
+
+
+# すごいssh
+
+function ext-ssh {
+  set-term-bgcolor 0 0 64
+  set-term-tab-color 64 64 255
+
+  \ssh $@
+
+  set-term-bgcolor 0 0 0
+  reset-term-tab-color
+}
+compdef _ssh ext-ssh=ssh
+
+alias ssh='ext-ssh'
+alias s='ext-ssh'
 
 
 # コマンドを実行するたびに英数モードに切り替える

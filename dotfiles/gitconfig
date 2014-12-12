@@ -19,6 +19,8 @@
   recent-branch = for-each-ref --format='%(refname:short)' --sort=-committerdate refs/heads
 [diff]
   renames = true
+[fetch]
+  prune = true
 [core]
   excludesfile = ~/.gitignore
 [include]

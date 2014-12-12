@@ -1,14 +1,15 @@
 export PATH="$HOME/Applications/bin:$PATH"
 
 alias l='ls -GFlah'
+export LSCOLORS=gxfxcxdxbxegedabagacag
 
 
-# sshするときは背景色を変える
+# sshするときに背景色を変える
 
 function set-term-bgcolor {
-  local R=$(($1*65535/255))
-  local G=$(($2*65535/255))
-  local B=$(($3*65535/255))
+  local R=$(($1*255))
+  local G=$(($2*255))
+  local B=$(($3*255))
   osascript <<EOF
     tell application "iTerm"
       tell the current terminal
@@ -31,9 +32,7 @@ alias ssh='color-ssh'
 alias s='color-ssh'
 
 
-# コマンドフック
-
-autoload -Uz add-zsh-hook
+# コマンドを実行するたびに英数モードに切り替える
 
 function force-alphanumeric {
   case "${OSTYPE}" in

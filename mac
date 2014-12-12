@@ -39,4 +39,6 @@ $BUNDLE/neobundle.vim/bin/neoinstall
 require zsh
 dotalias zsh
 dotalias zshrc
+dotalias zshrc.osx
+dotalias zshrc.peco
 chsh -s `which zsh`

@@ -1,0 +1,53 @@
+# 履歴のインクリメンタルサーチ
+
+function peco-history() {
+  local tac
+  if which tac > /dev/null; then
+      tac="tac"
+  else
+      tac="tail -r"
+  fi
+  BUFFER=$(history -n 1 | eval $tac | peco --query "$LBUFFER" --prompt "HISTORY>")
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-history
+bindkey '^r' peco-history
+
+
+# ファイル選択
+
+function peco-path() {
+  local filepath="$(find . | grep -v '/\.' | peco --prompt 'PATH>')"
+  if [ -z "$filepath" ]; then return; fi
+  if [ -n "$LBUFFER" ]; then
+    BUFFER="$LBUFFER$filepath"
+  else
+    if [ -d "$filepath" ]; then
+      BUFFER="cd $filepath"
+    elif [ -f "$filepath" ]; then
+      BUFFER="$EDITOR $filepath"
+    fi
+  fi
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-path
+bindkey '^f' peco-path
+
+
+# ブランチ選択
+
+function peco-branch() {
+  local branch="$(git recent-branch 2> /dev/null | peco --prompt 'GIT BRANCH>')"
+  if [ -z "$branch" ]; then return; fi
+  if [ -n "$LBUFFER" ]; then
+    BUFFER="$LBUFFER$branch"
+  else
+    BUFFER="git checkout $branch"
+  fi
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-branch
+bindkey '^b' peco-branch

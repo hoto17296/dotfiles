@@ -35,34 +35,6 @@ export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 
-# sshするときは背景色を変える
-
-function set-term-bgcolor {
-  local R=$(($1*65535/255))
-  local G=$(($2*65535/255))
-  local B=$(($3*65535/255))
-  osascript <<EOF
-    tell application "iTerm"
-      tell the current terminal
-        tell the current session
-          set background color to {${R},${G},${B}}
-        end tell
-      end tell
-    end tell
-EOF
-}
-
-function color-ssh {
-  set-term-bgcolor 0 0 64
-  \ssh $@
-  set-term-bgcolor 0 0 0
-}
-compdef _ssh color-ssh=ssh
-
-alias ssh='color-ssh'
-alias s='color-ssh'
-
-
 # 移動
 
 alias ..='cd ..'
@@ -139,21 +111,6 @@ setopt prompt_subst      # プロンプト文字列を評価する
 setopt transient_rprompt # 古い右プロンプトを消す
 
 
-# コマンドフック
-
-autoload -Uz add-zsh-hook
-
-function force-alphanumeric {
-  case "${OSTYPE}" in
-  darwin*)
-    # 「英数」キーを押す
-    # 若干重いので サブシェル + バックグラウンド で実行する
-    (osascript -e 'tell application "System Events" to key code {102}' &)
-  esac
-}
-add-zsh-hook precmd force-alphanumeric
-
-
 # env系
 
 if [[ -d "$HOME/.rbenv" ]]; then
@@ -168,53 +125,8 @@ fi
 
 # peco
 
-function peco-history() {
-  local tac
-  if which tac > /dev/null; then
-      tac="tac"
-  else
-      tac="tail -r"
-  fi
-  BUFFER=$(history -n 1 | eval $tac | peco --query "$LBUFFER" --prompt "HISTORY>")
-  CURSOR=$#BUFFER
-}
-
-function peco-path() {
-  local filepath="$(find . | grep -v '/\.' | peco --prompt 'PATH>')"
-  if [ -z "$filepath" ]; then return; fi
-  if [ -n "$LBUFFER" ]; then
-    BUFFER="$LBUFFER$filepath"
-  else
-    if [ -d "$filepath" ]; then
-      BUFFER="cd $filepath"
-    elif [ -f "$filepath" ]; then
-      BUFFER="$EDITOR $filepath"
-    fi
-  fi
-  CURSOR=$#BUFFER
-}
-
-function peco-branch() {
-  local branch="$(git recent-branch 2> /dev/null | peco --prompt 'GIT BRANCH>')"
-  if [ -z "$branch" ]; then return; fi
-  if [ -n "$LBUFFER" ]; then
-    BUFFER="$LBUFFER$branch"
-  else
-    BUFFER="git checkout $branch"
-  fi
-  CURSOR=$#BUFFER
-}
-
 if [ -x "`which peco 2> /dev/null`" ]; then
-  # ブランチ選択
-  zle -N peco-branch
-  bindkey '^b' peco-branch
-  # 履歴のインクリメンタルサーチ
-  zle -N peco-history
-  bindkey '^r' peco-history
-  # ファイル選択
-  zle -N peco-path
-  bindkey '^f' peco-path
+  source $HOME/.zshrc.peco
 fi
 
 
@@ -222,10 +134,7 @@ fi
 
 case "${OSTYPE}" in
 darwin*)
-  alias l='ls -GFlah'
-  export PATH="$HOME/Applications/bin:$PATH"
-  # rm でゴミ箱に移動
-  if [ -x "`which rmtrash`" ]; then alias rm='rmtrash'; fi
+  source $HOME/.zshrc.osx
   ;;
 linux*)
   alias l='ls -Flah --color'
@@ -235,4 +144,4 @@ esac
 
 # マシン固有設定
 
-if [ -f ~/.zshrc.local ]; then source ~/.zshrc.local; fi
+if [ -f $HOME/.zshrc.local ]; then source $HOME/.zshrc.local; fi

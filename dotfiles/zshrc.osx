@@ -1,0 +1,51 @@
+export PATH="$HOME/Applications/bin:$PATH"
+
+alias l='ls -GFlah'
+
+
+# sshするときは背景色を変える
+
+function set-term-bgcolor {
+  local R=$(($1*65535/255))
+  local G=$(($2*65535/255))
+  local B=$(($3*65535/255))
+  osascript <<EOF
+    tell application "iTerm"
+      tell the current terminal
+        tell the current session
+          set background color to {${R},${G},${B}}
+        end tell
+      end tell
+    end tell
+EOF
+}
+
+function color-ssh {
+  set-term-bgcolor 0 0 64
+  \ssh $@
+  set-term-bgcolor 0 0 0
+}
+compdef _ssh color-ssh=ssh
+
+alias ssh='color-ssh'
+alias s='color-ssh'
+
+
+# コマンドフック
+
+autoload -Uz add-zsh-hook
+
+function force-alphanumeric {
+  case "${OSTYPE}" in
+  darwin*)
+    # 「英数」キーを押す
+    # 若干重いので サブシェル + バックグラウンド で実行する
+    (osascript -e 'tell application "System Events" to key code {102}' &)
+  esac
+}
+add-zsh-hook precmd force-alphanumeric
+
+
+# rm でゴミ箱に移動
+
+if [ -x "`which rmtrash`" ]; then alias rm='rmtrash'; fi

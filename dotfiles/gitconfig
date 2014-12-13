@@ -17,6 +17,7 @@
   tree = log --graph --decorate --oneline
   hist = log -p
   recent-branch = for-each-ref --format='%(refname:short)' --sort=-committerdate refs/heads
+  current-branch = rev-parse --abbrev-ref HEAD
 [diff]
   renames = true
 [fetch]

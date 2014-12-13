@@ -8,8 +8,6 @@ export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 bindkey -d # キーバインドリセット
 bindkey -e # emacsモード
 
-alias v='vim'
-alias vi='vim'
 alias be='bundle exec'
 alias pag='ps aux | grep'
 alias rake='noglob rake'
@@ -23,7 +21,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完
 
 # パスを読み込み
 
-if [ -f ~/.zshrc_path.local ]; then source ~/.zshrc_path.local; fi
+[ -f ~/.zshrc_path.local ] && source ~/.zshrc_path.local
 
 
 # 移動
@@ -41,9 +39,7 @@ setopt pushd_ignore_dups # pushdの履歴は残さない
 # 履歴
 # zsh の history は fc -l のエイリアス
 
-if [ -z $HISTFILE ]; then
-  HISTFILE=$HOME/.zsh_history
-fi
+[ -z $HISTFILE ] && HISTFILE=$HOME/.zsh_history
 
 HISTSIZE=10000 # メモリへの保存件数
 SAVEHIST=10000 # ファイルへの保存件数
@@ -62,39 +58,36 @@ setopt share_history          # 端末間で履歴を共有
 alias g='git'
 compdef g=git
 
-function current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
+function inside-git-work-tree {
+  git rev-parse --is-inside-work-tree &> /dev/null
 }
 
-alias gpl='git pull origin $(current_branch)'
-alias gps='git push origin $(current_branch)'
+alias gpl='git pull origin $(git current-branch)'
+alias gps='git push origin $(git current-branch)'
 
 
 # プロンプト
 
-function git-current-branch {
-  local name st color gitdir action
-  if [[ "$PWD" =~ '/¥.git(/.*)?$' ]]; then return; fi
-  name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
-  if [[ -z $name ]]; then return; fi
+function prompt-git-status {
+  local branch st color
+  inside-git-work-tree || return
+
+  branch=$(basename `git current-branch`)
 
   st=`git status 2> /dev/null`
-  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+  if [[ $st =~ 'working directory clean' ]]; then
     color=%f
-  elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+  elif [[ $st =~ 'untracked files present' ]]; then
     color=%F{yellow}
-  elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
-    color=%B%F{red}
   else
     color=%F{red}
   fi
-  echo "$color($name)%f%b"
+
+  echo "$color($branch)%f%b"
 }
 
 local face="%(?:%F{green}(^_^):%F{red}(>_<%)%s)%f"
-PROMPT='${face}%M:%c$(git-current-branch)$ '
+PROMPT='${face}%M:%c$(prompt-git-status)$ '
 SPROMPT='%F{yellow}(?_?)%fもしかして: %B%r%b [y/N/a/e]? '
 RPROMPT='`date +"%Y/%m/%d(%a) %k:%M:%S"`'
 
@@ -116,9 +109,7 @@ fi
 
 # peco
 
-if type peco > /dev/null 2>&1; then
-  source $HOME/.zshrc.peco
-fi
+type peco > /dev/null 2>&1 && source $HOME/.zshrc.peco
 
 
 # OS固有設定
@@ -128,6 +119,7 @@ darwin*)
   source $HOME/.zshrc.osx
   ;;
 linux*)
+  alias v='vim'
   alias l='ls -Flah --color'
   ;;
 esac
@@ -135,4 +127,7 @@ esac
 
 # マシン固有設定
 
-if [ -f $HOME/.zshrc.local ]; then source $HOME/.zshrc.local; fi
+[ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+
+true

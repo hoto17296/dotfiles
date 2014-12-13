@@ -53,12 +53,15 @@ alias ssh='ext-ssh'
 alias s='ext-ssh'
 
 
-# vim で編集時にタブのタイトルにファイル名を表示する
+# すごいvim
 
 function ext-vim {
   set-term-tab-title $1
+
   \vim $@
-  exec-chpwd
+
+  set-term-tab-title-dirname
+  inside-git-work-tree && git st
 }
 
 alias v='ext-vim'
@@ -108,17 +111,13 @@ add-zsh-hook precmd force-alphanumeric
 
 # rm でゴミ箱に移動
 
-if type rmtrash > /dev/null 2>&1; then
-  alias rm='rmtrash'
-fi
+type rmtrash > /dev/null 2>&1 && alias rm='rmtrash'
 
 
 # ディレクトリ移動時のフックを明示的に呼ぶための関数
 
 function exec-chpwd {
-  for chpwd_func in $chpwd_functions; do
-      $chpwd_func
-  done
+  for chpwd_func in $chpwd_functions; do $chpwd_func; done
 }
 
-exec-chpwd
+exec-chpwd # 初回実行

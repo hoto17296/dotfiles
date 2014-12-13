@@ -2,11 +2,9 @@
 
 function peco-history() {
   local tac
-  if type tac > /dev/null 2>&1; then
-    tac="tac"
-  else
-    tac="tail -r"
-  fi
+  type tac > /dev/null 2>&1 \
+    && tac="tac" \
+    || tac="tail -r"
   BUFFER=$(history -n 1 | eval $tac | peco --query "$LBUFFER" --prompt "HISTORY>")
   CURSOR=$#BUFFER
 }
@@ -19,7 +17,7 @@ bindkey '^r' peco-history
 
 function peco-path() {
   local filepath="$(find . | grep -v '/\.' | peco --prompt 'PATH>')"
-  if [ -z "$filepath" ]; then return; fi
+  [ -z "$filepath" ] && return
   if [ -n "$LBUFFER" ]; then
     BUFFER="$LBUFFER$filepath"
   else
@@ -40,7 +38,7 @@ bindkey '^f' peco-path
 
 function peco-branch() {
   local branch="$(git recent-branch 2> /dev/null | peco --prompt 'GIT BRANCH>')"
-  if [ -z "$branch" ]; then return; fi
+  [ -z "$branch" ] && return
   if [ -n "$LBUFFER" ]; then
     BUFFER="$LBUFFER$branch"
   else

@@ -53,6 +53,19 @@ alias ssh='ext-ssh'
 alias s='ext-ssh'
 
 
+# vim で編集時にタブのタイトルにファイル名を表示する
+
+function ext-vim {
+  set-term-tab-title $1
+  \vim $@
+  set-term-tab-title
+}
+
+alias v='ext-vim'
+alias vi='ext-vim'
+alias vim='ext-vim'
+
+
 # ディレクトリ移動時にタブのタイトルにディレクトリ名を表示する
 
 function set-term-tab-title-dirname {

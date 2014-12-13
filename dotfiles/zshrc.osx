@@ -58,7 +58,7 @@ alias s='ext-ssh'
 function ext-vim {
   set-term-tab-title $1
   \vim $@
-  set-term-tab-title
+  exec-chpwd
 }
 
 alias v='ext-vim'
@@ -72,7 +72,6 @@ function set-term-tab-title-dirname {
   set-term-tab-title $(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
 }
 add-zsh-hook chpwd set-term-tab-title-dirname
-set-term-tab-title-dirname
 
 
 # ディレクトリ移動時に ls の結果を表示する
@@ -112,3 +111,14 @@ add-zsh-hook precmd force-alphanumeric
 if type rmtrash > /dev/null 2>&1; then
   alias rm='rmtrash'
 fi
+
+
+# ディレクトリ移動時のフックを明示的に呼ぶための関数
+
+function exec-chpwd {
+  for chpwd_func in $chpwd_functions; do
+      $chpwd_func
+  done
+}
+
+exec-chpwd

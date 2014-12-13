@@ -109,7 +109,7 @@ fi
 
 # peco
 
-type peco > /dev/null 2>&1 && source $HOME/.zshrc.peco
+type peco &> /dev/null && source $HOME/.zshrc.peco
 
 
 # OS固有設定

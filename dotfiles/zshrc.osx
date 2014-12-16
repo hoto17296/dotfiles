@@ -56,7 +56,7 @@ alias s='ext-ssh'
 # すごいvim
 
 function ext-vim {
-  set-term-tab-title $1
+  set-term-tab-title $(basename $1)
 
   \vim $@
 

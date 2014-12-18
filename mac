@@ -16,7 +16,7 @@ fi
 if ! enabled brew; then
 	ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 fi
-brew bundle $SETUP
+$SETUP/Brewfile.sh
 
 DOT=$SETUP/dotfiles
 dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DOT/$1 $HOME/.$1; fi }

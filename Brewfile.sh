@@ -38,8 +38,6 @@ brew cask install boot2docker
 brew cask install coteditor
 brew cask install kobito
 brew cask install sequel-pro
-brew cask install totalfinder
-brew cask install alfred
 brew cask install vlc
 brew cask install karabiner
 brew cask install appcleaner

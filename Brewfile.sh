@@ -5,6 +5,7 @@ brew upgrade
 
 brew install zsh
 brew install vim
+brew install git
 brew install wget
 brew install tree
 brew install ag

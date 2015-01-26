@@ -1,7 +1,7 @@
 [alias]
   st = status -s -b
   cm = commit -a
-  df = diff --color-words
+  df = diff -w --color-words
   br = branch
   co = checkout
   cb = checkout -b
@@ -12,6 +12,7 @@
   rb = rebase
   gr = grep
   ss = stash
+  bl = blame -w
   lg = log --stat
   amn = commit -a --amend --no-edit
   tree = log --graph --decorate --oneline

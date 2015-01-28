@@ -66,3 +66,12 @@ function peco-git-grep() {
 
 zle -N peco-git-grep
 bindkey '^g' peco-git-grep
+
+
+# プロセス一覧を peco で表示
+
+function peco-ps() {
+  \ps $@ | peco --prompt 'PROCESS>'
+}
+
+alias ps=peco-ps

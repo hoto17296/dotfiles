@@ -3,6 +3,11 @@ export PATH="$HOME/Applications/bin:$PATH"
 alias l='ls -GFlah'
 export LSCOLORS=gxfxcxdxbxegedabagacag
 
+# ^s にバインドできないのを解消
+stty -ixoff
+stty stop undef
+stty start undef
+
 
 # iTerm 関連
 

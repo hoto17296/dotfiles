@@ -3,6 +3,11 @@ export PATH="$HOME/Applications/bin:$PATH"
 alias l='ls -GFlah'
 export LSCOLORS=gxfxcxdxbxegedabagacag
 
+# ^s にバインドできないのを解消
+stty -ixoff
+stty stop undef
+stty start undef
+
 
 # iTerm 関連
 
@@ -56,7 +61,7 @@ alias s='ext-ssh'
 # すごいvim
 
 function ext-vim {
-  set-term-tab-title $1
+  set-term-tab-title $(basename $1)
 
   \vim $@
 

@@ -49,3 +49,44 @@ function peco-branch() {
 
 zle -N peco-branch
 bindkey '^b' peco-branch
+
+
+# git grep した結果を絞り込んでエディタで開く
+
+function peco-git-grep() {
+  inside-git-work-tree || return
+  [ -z "$LBUFFER" ] && return
+  local peco="$(\git grep -n "$LBUFFER" | peco --prompt 'GIT GREP>' 2> /dev/null)"
+  [ -z "$peco" ] && return
+  local file="$(echo $peco | cut -d':' -f1)"
+  local line="$(echo $peco | cut -d':' -f2)"
+  BUFFER="$EDITOR $file +$line"
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-git-grep
+bindkey '^g' peco-git-grep
+
+
+# プロセス一覧を peco で表示
+
+function peco-ps() {
+  \ps $@ | peco --prompt 'PROCESS>'
+}
+
+alias ps=peco-ps
+
+
+# sshconfig からホスト一覧を取得して peco で表示
+
+function peco-ssh() {
+  local config="$HOME/.ssh/config"
+  [ -f $config ] || return
+  local host=$(grep "^\s*Host " $config | sed s/"[\s ]*Host "// | grep -v "^\*$" | sort | peco --prompt "SSH>")
+  BUFFER="ssh $host"
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-ssh
+bindkey '^s' peco-ssh
+

@@ -11,6 +11,7 @@ bindkey -e # emacsモード
 alias be='bundle exec'
 alias pag='ps aux | grep'
 alias rake='noglob rake'
+alias vg='vagrant'
 
 setopt correct # typo補完
 setopt nobeep  # beep音鳴らさない

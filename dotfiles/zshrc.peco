@@ -83,6 +83,7 @@ function peco-ssh() {
   local config="$HOME/.ssh/config"
   [ -f $config ] || return
   local host=$(grep "^\s*Host " $config | sed s/"[\s ]*Host "// | grep -v "^\*$" | sort | peco --prompt "SSH>")
+  [ -z "$host" ] && return
   BUFFER="ssh $host"
   CURSOR=$#BUFFER
 }

@@ -13,9 +13,10 @@ alias pag='ps aux | grep'
 alias rake='noglob rake'
 alias vg='vagrant'
 
-setopt correct # typo補完
-setopt nobeep  # beep音鳴らさない
+setopt correct         # typo補完
+setopt nobeep          # beep音鳴らさない
 setopt no_flow_control # Ctrl+S / Ctrl+Q によるフロー制御を使わない
+setopt ignoreeof       # Ctrl+D でログアウトしない
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を区別しない
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完

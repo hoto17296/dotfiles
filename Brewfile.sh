@@ -13,6 +13,7 @@ brew install rbenv ruby-build
 brew install rbenv-default-gems
 brew install plenv perl-build
 brew install node
+brew install go
 brew install mysql
 brew install awscli
 brew install mecab mecab-ipadic

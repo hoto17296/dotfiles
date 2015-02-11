@@ -80,6 +80,10 @@ set listchars=tab:\:\ ,trail:~
 " セミコロンでもコマンド使えるようにする
 noremap ; :
 
+" beep音を消す
+set noerrorbells
+set vb t_vb=
+
 
 " neocomplcacheを自動起動させる
 let g:neocomplcache_enable_at_startup = 1

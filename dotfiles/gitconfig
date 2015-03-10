@@ -8,7 +8,7 @@
   cl = clone
   ft = fetch
   ps = push
-  pl = pull
+  pl = pull --prune
   rb = rebase
   gr = grep
   ss = stash

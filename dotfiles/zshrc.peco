@@ -71,6 +71,8 @@ bindkey '^g' peco-git-grep
 # プロセス一覧を peco で表示
 
 function peco-ps() {
+  # TODO 引数なしの場合のデフォルトオプション設定する
+  # OSXの場合: aux, Linuxの場合: auxf
   \ps $@ | peco --prompt 'PROCESS>'
 }
 

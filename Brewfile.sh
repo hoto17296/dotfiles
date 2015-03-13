@@ -20,6 +20,7 @@ brew install imagemagick
 brew install figlet
 brew install rmtrash
 brew install ttytter
+brew install colordiff
 
 brew tap peco/peco
 brew install peco

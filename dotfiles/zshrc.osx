@@ -112,7 +112,7 @@ add-zsh-hook precmd force-alphanumeric
 
 # rm でゴミ箱に移動
 
-type rmtrash &> /dev/null && alias rm='rmtrash'
+executable rmtrash && alias rm='rmtrash'
 
 
 # ディレクトリ移動時のフックを明示的に呼ぶための関数

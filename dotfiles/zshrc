@@ -22,6 +22,11 @@ setopt ignoreeof       # Ctrl+D でログアウトしない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を区別しない
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完
 
+# 関数やコマンドが存在するかどうか
+function executable {
+  whence $@ &> /dev/null
+}
+
 
 # パスを読み込み
 
@@ -113,7 +118,7 @@ fi
 
 # peco
 
-type peco &> /dev/null && source $HOME/.zshrc.peco
+executable peco && source $HOME/.zshrc.peco
 
 
 # OS固有設定

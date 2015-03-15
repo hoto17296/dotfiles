@@ -2,7 +2,7 @@
 
 function peco-history() {
   local tac
-  type tac &> /dev/null \
+  executable tac \
     && tac="tac" \
     || tac="tail -r"
   BUFFER=$(history -n 1 | eval $tac | peco --query "$LBUFFER" --prompt "HISTORY>")

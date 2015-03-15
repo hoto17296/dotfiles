@@ -40,8 +40,13 @@ function reset-term-tab-color {
 # すごいssh
 
 function ext-ssh {
-  set-term-bgcolor 17 17 85
-  set-term-tab-color 51 51 255
+  if executable is_production && is_production $@; then
+    set-term-bgcolor 85 17 17
+    set-term-tab-color 255 51 51
+  else
+    set-term-bgcolor 17 17 85
+    set-term-tab-color 51 51 255
+  fi
 
   \ssh $@
 

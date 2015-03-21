@@ -115,6 +115,10 @@ if [[ -d "$HOME/.plenv" ]]; then
   eval "$(plenv init - zsh)"
 fi
 
+if [[ -d "$HOME/.nodebrew" ]]; then
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
+
 
 # peco
 

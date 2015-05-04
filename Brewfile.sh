@@ -22,8 +22,6 @@ brew install imagemagick
 brew install figlet
 brew install rmtrash
 brew install ttytter
-
-brew tap peco/peco
 brew install peco
 
 brew tap caskroom/cask

@@ -4,6 +4,7 @@ brew update
 brew upgrade
 
 brew install zsh
+brew install zsh-completions
 brew install vim
 brew install git
 brew install wget

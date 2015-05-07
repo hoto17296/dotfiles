@@ -64,9 +64,11 @@ set shiftwidth=2  " autoindent時のスペース量
 set softtabstop=0 " TAB展開時のスペース量(0:tsと同量)
 
 " 言語ごとのインデント設定
-autocmd FileType ruby   setlocal sw=2 sts=2 ts=2 et
-autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
-autocmd FileType go     setlocal noet
+autocmd FileType javascript     setlocal sw=2 sts=2 ts=2 et
+autocmd FileType javascript.jsx setlocal sw=2 sts=2 ts=2 et
+autocmd FileType ruby           setlocal sw=2 sts=2 ts=2 et
+autocmd FileType coffee         setlocal sw=2 sts=2 ts=2 et
+autocmd FileType go             setlocal noet
 
 " クリップボードを共有
 set clipboard=unnamed,autoselect

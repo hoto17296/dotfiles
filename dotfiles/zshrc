@@ -39,6 +39,8 @@ function executable {
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias pd='popd'
 
 setopt auto_cd           # ディレクトリ名だけで移動

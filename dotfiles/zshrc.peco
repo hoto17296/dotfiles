@@ -93,3 +93,28 @@ function peco-ssh() {
 zle -N peco-ssh
 bindkey '^s' peco-ssh
 
+
+# ディレクトリを遡る
+
+function peco-parent() {
+  local dir=$(get-parents | peco --prompt "DIR>" | awk '{print $2}')
+  [ -z "$dir" ] && return
+  BUFFER="cd $dir"
+  CURSOR=$#BUFFER
+}
+
+function get-parents() {
+  local current=`pwd`
+  local count=0
+  while true
+  do
+    echo "${count}: ${current}"
+    current=${current%/*}
+    [ -z "$current" ] && return
+    count=$(($count + 1))
+  done
+}
+
+zle -N peco-parent
+bindkey '^x^f' peco-parent
+

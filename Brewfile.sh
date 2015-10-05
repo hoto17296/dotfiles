@@ -36,8 +36,6 @@ brew cask install google-japanese-ime
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install boot2docker
-brew cask install coteditor
-brew cask install kobito
 brew cask install sequel-pro
 brew cask install vlc
 brew cask install karabiner

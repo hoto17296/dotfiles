@@ -10,10 +10,6 @@ brew install git
 brew install wget
 brew install tree
 brew install ag
-brew install rbenv ruby-build
-brew install rbenv-default-gems
-brew install plenv perl-build
-brew install nodebrew
 brew install go
 brew install mysql
 brew install awscli

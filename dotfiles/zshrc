@@ -107,19 +107,11 @@ setopt prompt_subst      # プロンプト文字列を評価する
 setopt transient_rprompt # 古い右プロンプトを消す
 
 
-# env系
+# anyenv
 
-if [[ -d "$HOME/.rbenv" ]]; then
-  export PATH="$HOME/.rbenv/shims:$PATH"
-  eval "$(rbenv init - zsh)"
-fi
-
-if [[ -d "$HOME/.plenv" ]]; then
-  eval "$(plenv init - zsh)"
-fi
-
-if [[ -d "$HOME/.nodebrew" ]]; then
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
+if [[ -d "$HOME/.anyenv" ]]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
 fi
 
 

@@ -30,6 +30,7 @@ dotalias vimperatorrc
 dotalias gitconfig
 dotalias gitignore
 dotalias gemrc
+dotalias npmrc
 dotalias peco
 dotalias rbenv
 

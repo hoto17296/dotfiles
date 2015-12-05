@@ -3,3 +3,4 @@
 .vimrc.local
 .node-version
 .ruby-version
+npm-debug.log

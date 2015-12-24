@@ -22,6 +22,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'evanmiller/nginx-vim-syntax'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
 

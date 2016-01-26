@@ -27,3 +27,5 @@
   excludesfile = ~/.gitignore
 [include]
   path = ~/.gitconfig.local
+[merge]
+	ff = false

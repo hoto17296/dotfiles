@@ -28,4 +28,4 @@
 [include]
   path = ~/.gitconfig.local
 [merge]
-	ff = false
+  #ff = false

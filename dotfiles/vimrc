@@ -17,6 +17,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'airblade/vim-gitgutter'
 
 " Syntax highlight
 NeoBundle 'tpope/vim-markdown'

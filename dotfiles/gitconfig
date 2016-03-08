@@ -28,4 +28,6 @@
 [include]
   path = ~/.gitconfig.local
 [merge]
-	ff = false
+  ff = false
+[pull]
+	rebase = preserve

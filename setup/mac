@@ -33,11 +33,13 @@ dotalias gemrc
 dotalias peco
 
 require vim
-BUNDLE=$HOME/.vim/bundle
 dotalias vimrc
-mkdir -p $BUNDLE
-git clone https://github.com/Shougo/neobundle.vim $BUNDLE/neobundle.vim
-$BUNDLE/neobundle.vim/bin/neoinstall
+BUNDLE=$HOME/.vim/bundle
+if ! [ -d $BUNDLE ]; then
+  mkdir -p $BUNDLE
+  git clone https://github.com/Shougo/neobundle.vim $BUNDLE/neobundle.vim
+  $BUNDLE/neobundle.vim/bin/neoinstall
+fi
 
 require zsh
 dotalias zsh

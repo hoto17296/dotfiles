@@ -16,7 +16,7 @@ fi
 if ! enabled brew; then
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-#sh $DIR/setup/Brewfile.sh
+sh $DIR/setup/Brewfile.sh
 
 if ! [ -d ~/.anyenv ]; then
   git clone https://github.com/riywo/anyenv ~/.anyenv
@@ -31,7 +31,6 @@ dotalias gitignore
 dotalias gemrc
 #dotalias npmrc
 dotalias peco
-dotalias rbenv
 
 require vim
 BUNDLE=$HOME/.vim/bundle

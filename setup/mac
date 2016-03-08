@@ -7,30 +7,29 @@ require() { if ! enabled $1; then echo "Please install $1."; exit 1; fi }
 
 require git
 
-SETUP=$HOME/.setup
+DIR=$HOME/.dotfiles
 
-if ! [ -d $SETUP ]; then
-	git clone https://github.com/hoto17296/setup.git $SETUP
+if ! [ -d $DIR ]; then
+	git clone https://github.com/hoto17296/dotfiles.git $DIR
 fi
 
 if ! enabled brew; then
 	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
-sh $SETUP/Brewfile.sh
+#sh $DIR/setup/Brewfile.sh
 
 if ! [ -d ~/.anyenv ]; then
   git clone https://github.com/riywo/anyenv ~/.anyenv
 fi
 
-DOT=$SETUP/dotfiles
-dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DOT/$1 $HOME/.$1; fi }
+dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DIR/$1 $HOME/.$1; fi }
 
 dotalias vimperator
 dotalias vimperatorrc
 dotalias gitconfig
 dotalias gitignore
 dotalias gemrc
-dotalias npmrc
+#dotalias npmrc
 dotalias peco
 dotalias rbenv
 

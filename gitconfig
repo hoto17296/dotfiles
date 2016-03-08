@@ -30,4 +30,4 @@
 [merge]
   ff = false
 [pull]
-	rebase = preserve
+  rebase = preserve

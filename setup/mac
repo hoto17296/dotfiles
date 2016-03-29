@@ -28,6 +28,7 @@ dotalias vimperator
 dotalias vimperatorrc
 dotalias gitconfig
 dotalias gitignore
+dotalias tigrc
 dotalias gemrc
 #dotalias npmrc
 dotalias peco

@@ -12,7 +12,7 @@
   rb = rebase
   gr = grep
   ss = stash
-  bl = blame -w
+  bl = blame -w -C
   lg = log --stat
   amn = commit --all --amend --no-edit
   tree = log --graph --decorate --oneline

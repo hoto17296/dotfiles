@@ -51,21 +51,21 @@ zle -N peco-branch
 bindkey '^b' peco-branch
 
 
-# git grep した結果を絞り込んでエディタで開く
-
-function peco-git-grep() {
-  inside-git-work-tree || return
-  [ -z "$LBUFFER" ] && return
-  local peco="$(\git grep -n "$LBUFFER" | peco --prompt 'GIT GREP>' 2> /dev/null)"
-  [ -z "$peco" ] && return
-  local file="$(echo $peco | cut -d':' -f1)"
-  local line="$(echo $peco | cut -d':' -f2)"
-  BUFFER="$EDITOR $file +$line"
-  CURSOR=$#BUFFER
-}
-
-zle -N peco-git-grep
-bindkey '^g' peco-git-grep
+## git grep した結果を絞り込んでエディタで開く
+#
+#function peco-git-grep() {
+#  inside-git-work-tree || return
+#  [ -z "$LBUFFER" ] && return
+#  local peco="$(\git grep -n "$LBUFFER" | peco --prompt 'GIT GREP>' 2> /dev/null)"
+#  [ -z "$peco" ] && return
+#  local file="$(echo $peco | cut -d':' -f1)"
+#  local line="$(echo $peco | cut -d':' -f2)"
+#  BUFFER="$EDITOR $file +$line"
+#  CURSOR=$#BUFFER
+#}
+#
+#zle -N peco-git-grep
+#bindkey '^g' peco-git-grep
 
 
 # プロセス一覧を peco で表示

@@ -35,5 +35,8 @@ cnoremap <C-a> <Ins><C-a><Ins>
 " セミコロンでもコマンド使えるようにする
 noremap ; :
 
+" フルスクリーンモードでも常にステータスバーを表示する
+set statuslinevisibility=visible
+
 " ,r で vimperatorrc をリロード
 map ,r :source ~/.vimperatorrc<CR>

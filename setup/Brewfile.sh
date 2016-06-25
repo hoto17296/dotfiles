@@ -5,7 +5,7 @@ brew upgrade
 
 brew install zsh
 brew install zsh-completions
-brew install vim
+brew install vim --without-python --without-ruby --without-perl
 brew install git
 brew install wget
 brew install tree

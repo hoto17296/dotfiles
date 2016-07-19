@@ -87,7 +87,7 @@ function prompt-git-status {
   branch=$(basename `git current-branch`)
 
   st=`git status 2> /dev/null`
-  if [[ $st =~ 'working directory clean' ]]; then
+  if [[ $st =~ 'nothing to commit' ]]; then
     color=%f
   elif [[ $st =~ 'untracked files present' ]]; then
     color=%F{yellow}

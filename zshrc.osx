@@ -13,10 +13,8 @@ function set-term-bgcolor {
   local B=$(($3*257))
   osascript <<EOF
     tell application "iTerm"
-      tell the current terminal
-        tell the current session
-          set background color to {${R},${G},${B}}
-        end tell
+      tell current session of first window
+        set background color to {${R},${G},${B}}
       end tell
     end tell
 EOF

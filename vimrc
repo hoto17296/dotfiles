@@ -28,6 +28,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'evanmiller/nginx-vim-syntax'
+NeoBundle 'leafgarland/typescript-vim'
 
 call neobundle#end()
 

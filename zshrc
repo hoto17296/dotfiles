@@ -42,6 +42,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias pd='popd'
+alias cdgr='cd $(git rev-parse --show-toplevel)' # リポジトリのルートに移動
 
 setopt auto_cd           # ディレクトリ名だけで移動
 setopt auto_pushd        # pushdで移動

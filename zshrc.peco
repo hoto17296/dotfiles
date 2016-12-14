@@ -107,3 +107,15 @@ function get-parents() {
 zle -N peco-parent
 bindkey '^x^f' peco-parent
 
+
+# 移動履歴から選択して移動
+
+function peco-cdr {
+  local dir=$(dirs -v | peco --prompt "DIR>" | awk '{print $2}')
+  [ -z "$dir" ] && return
+  BUFFER="cd $dir"
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-cdr
+bindkey '^x^d' peco-cdr

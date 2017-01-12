@@ -35,11 +35,9 @@ dotalias peco
 
 require vim
 dotalias vimrc
-BUNDLE=$HOME/.vim/bundle
-if ! [ -d $BUNDLE ]; then
-  mkdir -p $BUNDLE
-  git clone https://github.com/Shougo/neobundle.vim $BUNDLE/neobundle.vim
-  $BUNDLE/neobundle.vim/bin/neoinstall
+DEIN_DIR=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+if ! [ -d $DEIN_DIR ]; then
+  git clone https://github.com/Shougo/dein.vim.git $DEIN_DIR
 fi
 
 require zsh

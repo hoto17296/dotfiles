@@ -14,6 +14,9 @@ if dein#load_state('~/.vim/dein')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('airblade/vim-gitgutter')
 
+  call dein#add('nikvdp/ejs-syntax')
+  call dein#add('vim-scripts/nginx.vim')
+
   call dein#end()
   call dein#save_state()
 endif

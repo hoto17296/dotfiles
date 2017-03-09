@@ -20,6 +20,7 @@ brew install figlet
 brew install rmtrash
 brew install ttytter
 brew install peco
+brew install direnv
 
 brew tap caskroom/cask
 brew tap caskroom/versions

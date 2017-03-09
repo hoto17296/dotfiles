@@ -108,6 +108,11 @@ setopt prompt_subst      # プロンプト文字列を評価する
 setopt transient_rprompt # 古い右プロンプトを消す
 
 
+# direnv
+
+eval "$(direnv hook zsh)"
+
+
 # anyenv
 
 if [[ -d "$HOME/.anyenv" ]]; then

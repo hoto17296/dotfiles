@@ -16,7 +16,7 @@ brew install mecab mecab-ipadic
 brew install imagemagick
 brew install figlet
 brew install rmtrash
-brew install ttytter
+brew install oysttyer
 brew install peco
 brew install direnv
 

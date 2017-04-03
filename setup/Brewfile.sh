@@ -20,6 +20,11 @@ brew install ttytter
 brew install peco
 brew install direnv
 
+brew tap sanemat/font
+brew install ricty --vim-powerline
+cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
+fc-cache -vf
+
 brew tap caskroom/cask
 brew tap caskroom/versions
 brew install brew-cask

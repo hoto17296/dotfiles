@@ -21,7 +21,7 @@ brew install peco
 brew install direnv
 
 brew tap sanemat/font
-brew install ricty --vim-powerline
+brew install ricty --with-powerline
 cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 fc-cache -vf
 

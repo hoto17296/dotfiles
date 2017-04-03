@@ -26,7 +26,6 @@ cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 fc-cache -vf
 
 brew tap caskroom/cask
-brew tap caskroom/versions
 brew install brew-cask
 
 brew cask install iterm2

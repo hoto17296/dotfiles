@@ -20,6 +20,9 @@ brew install oysttyer
 brew install peco
 brew install direnv
 
+brew tap homebrew/science
+brew install r
+
 brew tap sanemat/font
 brew install ricty --with-powerline
 cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/

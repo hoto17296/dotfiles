@@ -19,6 +19,7 @@ brew install rmtrash
 brew install oysttyer
 brew install peco
 brew install direnv
+brew install heroku
 
 brew tap homebrew/science
 brew install r

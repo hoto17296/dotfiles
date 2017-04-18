@@ -128,7 +128,7 @@ executable peco && source $HOME/.zshrc.peco
 
 # Jupyter Notebook
 
-executable jupyter && alias start-jupyter="jupyter notebook --notebook-dir=${HOME}/Dropbox/jupyter"
+executable jupyter && alias start-jupyter="jupyter notebook --notebook-dir=${HOME}/Dropbox/jupyter --NotebookApp.token="
 
 
 # OS固有設定

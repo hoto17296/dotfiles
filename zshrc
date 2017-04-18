@@ -126,6 +126,11 @@ fi
 executable peco && source $HOME/.zshrc.peco
 
 
+# Jupyter Notebook
+
+executable jupyter && alias start-jupyter="jupyter notebook --notebook-dir=${HOME}/Dropbox/jupyter"
+
+
 # OS固有設定
 
 case "${OSTYPE}" in

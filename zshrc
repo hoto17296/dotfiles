@@ -115,7 +115,9 @@ alias gps='git push origin $(git current-branch)'
 # プロンプト
 
 function prompt-face {
-  echo '%(?:%F{green}(^_^):%F{red}(>_<%)%s)%f'
+  local venv
+  venv-activated && venv='v' || venv=''
+  echo "%(?:%F{green}${venv}(^_^)${venv}:%F{red}${venv}(>_<%)${venv}%s)%f"
 }
 
 function prompt-git-status {

@@ -153,6 +153,10 @@ esac
 # プラグイン設定
 
 if [[ -d "$HOME/.zplug" ]]; then
+  export AUTOENV_FILE_ENTER='.autoenv.zsh'
+  export AUTOENV_FILE_LEAVE='.autoenv.zsh'
+  export AUTOENV_HANDLE_LEAVE=1
+
   source $HOME/.zplug/init.zsh
 
   zplug "Tarrasch/zsh-autoenv"

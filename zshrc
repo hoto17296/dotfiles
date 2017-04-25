@@ -30,21 +30,6 @@ function executable {
 }
 
 
-# zplug
-source $HOME/.zplug/init.zsh
-
-zplug "Tarrasch/zsh-autoenv"
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load --verbose
-
-
 # パスを読み込み
 
 [ -f ~/.zshrc_path.local ] && source ~/.zshrc_path.local
@@ -163,6 +148,24 @@ esac
 # マシン固有設定
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
+
+
+# プラグイン設定
+
+if [[ -d "$HOME/.zplug" ]]; then
+  source $HOME/.zplug/init.zsh
+
+  zplug "Tarrasch/zsh-autoenv"
+
+  if ! zplug check --verbose; then
+      printf "Install? [y/N]: "
+      if read -q; then
+          echo; zplug install
+      fi
+  fi
+
+  zplug load
+fi
 
 
 true

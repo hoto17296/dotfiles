@@ -5,3 +5,6 @@
 .ruby-version
 npm-debug.log
 dump.rdb
+.autoenv.zsh
+.autoenv_leave.zsh
+.venv

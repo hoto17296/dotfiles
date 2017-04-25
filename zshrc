@@ -23,10 +23,26 @@ setopt ignoreeof       # Ctrl+D でログアウトしない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を区別しない
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完
 
+
 # 関数やコマンドが存在するかどうか
 function executable {
   whence $@ &> /dev/null
 }
+
+
+# zplug
+source $HOME/.zplug/init.zsh
+
+zplug "Tarrasch/zsh-autoenv"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
 
 
 # パスを読み込み

@@ -114,6 +114,10 @@ alias gps='git push origin $(git current-branch)'
 
 # プロンプト
 
+function prompt-face {
+  echo '%(?:%F{green}(^_^):%F{red}(>_<%)%s)%f'
+}
+
 function prompt-git-status {
   local branch st color
   inside-git-work-tree || return
@@ -132,8 +136,7 @@ function prompt-git-status {
   echo "$color($branch)%f%b"
 }
 
-local face="%(?:%F{green}(^_^):%F{red}(>_<%)%s)%f"
-PROMPT='${face}%M:%c$(prompt-git-status)$ '
+PROMPT='$(prompt-face)%M:%c$(prompt-git-status)$ '
 SPROMPT='%F{yellow}(?_?)%fもしかして: %B%r%b [y/N/a/e]? '
 RPROMPT='`date +"%Y/%m/%d(%a) %k:%M:%S"`'
 

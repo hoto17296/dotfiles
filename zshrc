@@ -25,9 +25,41 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完
 
 
 # 関数やコマンドが存在するかどうか
+
 function executable {
   whence $@ &> /dev/null
 }
+
+
+# Python venv 設定
+
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+function venv-activated {
+  executable deactivate
+}
+
+
+# プラグイン設定
+
+if [[ -d "$HOME/.zplug" ]]; then
+  export AUTOENV_FILE_ENTER='.autoenv.zsh'
+  export AUTOENV_FILE_LEAVE='.autoenv.zsh'
+  export AUTOENV_HANDLE_LEAVE=1
+
+  source $HOME/.zplug/init.zsh
+
+  zplug "Tarrasch/zsh-autoenv"
+
+  if ! zplug check --verbose; then
+      printf "Install? [y/N]: "
+      if read -q; then
+          echo; zplug install
+      fi
+  fi
+
+  zplug load
+fi
 
 
 # パスを読み込み
@@ -148,28 +180,6 @@ esac
 # マシン固有設定
 
 [ -f $HOME/.zshrc.local ] && source $HOME/.zshrc.local
-
-
-# プラグイン設定
-
-if [[ -d "$HOME/.zplug" ]]; then
-  export AUTOENV_FILE_ENTER='.autoenv.zsh'
-  export AUTOENV_FILE_LEAVE='.autoenv.zsh'
-  export AUTOENV_HANDLE_LEAVE=1
-
-  source $HOME/.zplug/init.zsh
-
-  zplug "Tarrasch/zsh-autoenv"
-
-  if ! zplug check --verbose; then
-      printf "Install? [y/N]: "
-      if read -q; then
-          echo; zplug install
-      fi
-  fi
-
-  zplug load
-fi
 
 
 true

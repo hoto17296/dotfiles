@@ -24,11 +24,29 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を区�
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完
 
 
+# パスを読み込み
+
+[ -f ~/.zshrc_path.local ] && source ~/.zshrc_path.local
+
+
 # 関数やコマンドが存在するかどうか
 
 function executable {
   whence $@ &> /dev/null
 }
+
+
+# direnv
+
+eval "$(direnv hook zsh)"
+
+
+# anyenv
+
+if [[ -d "$HOME/.anyenv" ]]; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
 
 
 # Python venv 設定
@@ -60,11 +78,6 @@ if [[ -d "$HOME/.zplug" ]]; then
 
   zplug load
 fi
-
-
-# パスを読み込み
-
-[ -f ~/.zshrc_path.local ] && source ~/.zshrc_path.local
 
 
 # 移動
@@ -144,19 +157,6 @@ RPROMPT='`date +"%Y/%m/%d(%a) %k:%M:%S"`'
 
 setopt prompt_subst      # プロンプト文字列を評価する
 setopt transient_rprompt # 古い右プロンプトを消す
-
-
-# direnv
-
-eval "$(direnv hook zsh)"
-
-
-# anyenv
-
-if [[ -d "$HOME/.anyenv" ]]; then
-  export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
-fi
 
 
 # peco

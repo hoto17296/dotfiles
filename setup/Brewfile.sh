@@ -11,6 +11,7 @@ brew install wget
 brew install tree
 brew install ag
 brew install mysql
+brew isntall redis
 brew install awscli
 brew install mecab mecab-ipadic
 brew install imagemagick

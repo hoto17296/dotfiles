@@ -61,24 +61,23 @@ function venv-activated {
 
 # プラグイン設定
 
-if [[ -d "$HOME/.zplug" ]]; then
-  export AUTOENV_FILE_ENTER='.autoenv.zsh'
-  export AUTOENV_FILE_LEAVE='.autoenv.zsh'
-  export AUTOENV_HANDLE_LEAVE=1
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-  source $HOME/.zplug/init.zsh
+export AUTOENV_FILE_ENTER='.autoenv.zsh'
+export AUTOENV_FILE_LEAVE='.autoenv.zsh'
+export AUTOENV_HANDLE_LEAVE=1
 
-  zplug "Tarrasch/zsh-autoenv"
+zplug "Tarrasch/zsh-autoenv"
 
-  if ! zplug check --verbose; then
-      printf "Install? [y/N]: "
-      if read -q; then
-          echo; zplug install
-      fi
-  fi
-
-  zplug load
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
+
+zplug load
 
 
 # 移動

@@ -44,5 +44,4 @@ dotalias zsh
 dotalias zshrc
 dotalias zshrc.osx
 dotalias zshrc.peco
-curl -sL --proto-redir -all,https https://zplug.sh/installer | zsh
 chsh -s `which zsh`

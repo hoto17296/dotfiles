@@ -1,6 +1,6 @@
 # Automatically activate Python virtualenvs
 # Usage:
-#   ln -s ~/.dotfiles/autoenv/venv.zsh ./.autoenv.zsh
+#   cp ~/.dotfiles/autoenv/venv.zsh ./.autoenv.zsh
 
 if [[ $autoenv_event == 'enter' ]]; then
   script_dir=$(chpwd_functions= cd $(dirname $0); pwd)

@@ -21,6 +21,7 @@ brew install oysttyer
 brew install peco
 brew install direnv
 brew install heroku
+brew install zplug
 
 brew tap homebrew/science
 brew install r

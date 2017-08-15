@@ -16,6 +16,14 @@ alias pag='ps aux | grep'
 alias rake='noglob rake'
 alias vg='vagrant'
 
+parallel () {
+  if [ $# -lt 2 ]; then
+    echo -e "Usage:\n  parallel <N> <command>"
+    return 1
+  fi
+  seq $1 | xargs -I{} -P $@
+}
+
 setopt correct         # typo補完
 setopt nobeep          # beep音鳴らさない
 setopt no_flow_control # Ctrl+S / Ctrl+Q によるフロー制御を使わない

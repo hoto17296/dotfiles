@@ -16,7 +16,7 @@ bindkey '^r' peco-history
 # ファイル選択
 
 function peco-path() {
-  local filepath="$(find . | grep -v '/\.' | peco --prompt 'PATH>')"
+  local filepath="$(find . | grep -v '/\.' | grep -v '__pycache__' | peco --prompt 'PATH>')"
   [ -z "$filepath" ] && return
   if [ -n "$LBUFFER" ]; then
     BUFFER="$LBUFFER$filepath"

@@ -13,6 +13,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('Townk/vim-autoclose')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('othree/eregex.vim')
 
   call dein#add('nikvdp/ejs-syntax')
   call dein#add('posva/vim-vue')

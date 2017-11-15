@@ -45,14 +45,6 @@ function executable {
 }
 
 
-# anyenv
-
-if [[ -d "$HOME/.anyenv" ]]; then
-  export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
-fi
-
-
 # Python venv 設定
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1

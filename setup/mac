@@ -18,10 +18,6 @@ if ! enabled brew; then
 fi
 sh $DIR/setup/Brewfile.sh
 
-if ! [ -d ~/.anyenv ]; then
-  git clone https://github.com/riywo/anyenv ~/.anyenv
-fi
-
 dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DIR/$1 $HOME/.$1; fi }
 
 dotalias gitconfig

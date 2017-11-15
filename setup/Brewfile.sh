@@ -7,7 +7,6 @@ brew install zsh
 brew install zsh-completions
 brew install zplug
 brew install vim --without-python --without-ruby --without-perl
-brew install git
 brew install wget
 brew install tree
 brew install rmtrash

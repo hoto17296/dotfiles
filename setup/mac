@@ -24,8 +24,6 @@ fi
 
 dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DIR/$1 $HOME/.$1; fi }
 
-dotalias vimperator
-dotalias vimperatorrc
 dotalias gitconfig
 dotalias gitignore
 dotalias gemrc

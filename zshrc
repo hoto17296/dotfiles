@@ -45,11 +45,6 @@ function executable {
 }
 
 
-# direnv
-
-eval "$(direnv hook zsh)"
-
-
 # anyenv
 
 if [[ -d "$HOME/.anyenv" ]]; then

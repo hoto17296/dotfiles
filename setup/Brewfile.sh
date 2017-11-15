@@ -36,7 +36,6 @@ brew install brew-cask
 
 brew cask install iterm2
 brew cask install java
-brew cask install firefox --language=ja
 brew cask install google-chrome
 brew cask install google-japanese-ime
 brew cask install sequel-pro

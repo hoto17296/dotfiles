@@ -71,9 +71,9 @@ bindkey '^g' peco-git-grep
 # sshconfig からホスト一覧を取得して peco で表示
 
 function peco-ssh() {
-  local config="$HOME/.ssh/config"
-  [ -f $config ] || return
-  local host=$(grep "^\s*Host " $config | sed s/"[\s ]*Host "// | grep -v "^\*$" | sort | peco --prompt "SSH>")
+  local dir="$HOME/.ssh"
+  [ -d $dir ] || return
+  local host=$(cat $dir/config $dir/conf.d/* | grep "^\s*Host " | sed s/"[\s ]*Host "// | grep -v "^\*$" | sort | peco --prompt "SSH>")
   [ -z "$host" ] && return
   BUFFER="ssh $host"
   CURSOR=$#BUFFER

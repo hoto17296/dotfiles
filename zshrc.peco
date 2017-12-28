@@ -119,3 +119,16 @@ function peco-cdr {
 
 zle -N peco-cdr
 bindkey '^x^d' peco-cdr
+
+
+# リポジトリ移動
+
+function peco-ghq() {
+  local repo=$(ghq list | peco --prompt "REPOSITORY>")
+  [ -z "$repo" ] && return
+  BUFFER="ghq look $repo"
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-ghq
+bindkey '^g^h' peco-ghq

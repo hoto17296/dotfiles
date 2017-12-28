@@ -1,4 +1,3 @@
-fpath=(/usr/local/share/zsh-completions(N-/) $fpath)
 autoload -Uz add-zsh-hook
 autoload -Uz compinit && compinit
 

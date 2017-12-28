@@ -3,8 +3,6 @@
 brew update
 brew upgrade
 
-brew install zsh
-brew install zsh-completions
 brew install zplug
 brew install vim --without-python --without-ruby --without-perl
 brew install wget
@@ -22,7 +20,6 @@ cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 fc-cache -vf
 
 brew tap caskroom/cask
-brew install brew-cask
 
 brew cask install iterm2
 brew cask install vivaldi
@@ -38,6 +35,7 @@ brew cask install insomnia
 
 brew install mas
 
+mas install 409183694   # Keynote
 mas install 443987910   # 1Password
 mas install 803453959   # Slack
 mas install 485812721   # TweetDeck

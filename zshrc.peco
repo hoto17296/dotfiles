@@ -126,7 +126,9 @@ bindkey '^x^d' peco-cdr
 function peco-ghq() {
   local repo=$(ghq list | peco --prompt "REPOSITORY>")
   [ -z "$repo" ] && return
-  BUFFER="ghq look $repo"
+  # ghq look で移動した状態で iTerm2 の新しいタブを開くと前のタブの
+  # ディレクトリが維持されないので ghq look ではなく cd で移動する
+  BUFFER="cd \$(ghq root)/$repo"
   CURSOR=$#BUFFER
 }
 

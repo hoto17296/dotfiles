@@ -31,3 +31,5 @@
   ff = false
 [pull]
   rebase = preserve
+[ghq]
+  root = ~/Work

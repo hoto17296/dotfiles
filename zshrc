@@ -15,7 +15,7 @@ alias pag='ps aux | grep'
 alias rake='noglob rake'
 alias vg='vagrant'
 
-parallel () {
+_parallel () {
   if [ $# -lt 2 ]; then
     echo -e "Usage:\n  parallel <N> <command>"
     return 1

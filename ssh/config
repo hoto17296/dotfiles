@@ -1,0 +1,12 @@
+Include conf.d/*
+
+Host mrkch.jp
+  User hoto
+
+# Run following command to wake GPU server up.
+# ssh mrkch.jp sudo etherwake -b -i switch0 00:01:2e:71:c4:cf
+Host gpu.mrkch.jp
+  User hoto
+
+Host *
+  IdentityFile ~/.ssh/id_ed25519

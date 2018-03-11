@@ -23,6 +23,7 @@ dotcopy() { if ! [ -L $HOME/.$1 ]; then cp $DIR/$1 $HOME/.$1; fi }
 
 dotalias gitconfig
 dotalias gitignore
+dotalias ssh
 dotalias gemrc
 dotcopy  npmrc
 dotalias peco

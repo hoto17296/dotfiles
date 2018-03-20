@@ -115,6 +115,14 @@ function inside-git-work-tree {
   git rev-parse --is-inside-work-tree &> /dev/null
 }
 
+function change-dir-to-git-root {
+  if inside-git-work-tree
+  then cd ./$(git rev-parse --show-cdup)
+  else false
+  fi
+}
+alias cdgr=change-dir-to-git-root
+
 alias gpl='git pull origin $(git current-branch)'
 alias gps='git push origin $(git current-branch)'
 

@@ -12,7 +12,6 @@ brew install oysttyer
 brew install peco
 brew install jq
 brew install awscli
-brew install heroku
 brew install ghq
 
 brew tap sanemat/font

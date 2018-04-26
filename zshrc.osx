@@ -1,4 +1,4 @@
-export PATH="$HOME/.ghq/github.com/hoto17296/bin:$PATH"
+export PATH="$(ghq root)/github.com/hoto17296/bin:$PATH"
 
 alias l='ls -GFlah'
 export LSCOLORS=gxfxcxdxbxegedabagacag

@@ -28,9 +28,9 @@ dotalias gemrc
 dotcopy  npmrc
 dotalias peco
 
-require vim
-dotalias vimrc
-DEIN_DIR=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+require nvim
+ln -s $DIR/nvim $HOME/.config/nvim
+DEIN_DIR=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 if ! [ -d $DEIN_DIR ]; then
   git clone https://github.com/Shougo/dein.vim.git $DEIN_DIR
 fi

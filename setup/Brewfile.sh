@@ -4,7 +4,7 @@ brew update
 brew upgrade
 
 brew install zplug
-brew install vim --without-python --without-ruby --without-perl
+brew install neovim
 brew install wget
 brew install tree
 brew install rmtrash

@@ -62,27 +62,6 @@ alias ssh='ext-ssh'
 alias s='ext-ssh'
 
 
-# すごいvim
-
-function ext-vim {
-  if [ $# -ne 0 ]; then
-    set-term-tab-title $(basename $1)
-  fi
-
-  \vim $@
-  local st=$?
-
-  set-term-tab-title-dirname
-  inside-git-work-tree && git st
-
-  return $st
-}
-
-alias v='ext-vim'
-alias vi='ext-vim'
-alias vim='ext-vim'
-
-
 # ディレクトリ移動時にタブのタイトルにディレクトリ名を表示する
 
 function set-term-tab-title-dirname {

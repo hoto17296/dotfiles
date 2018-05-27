@@ -15,7 +15,7 @@ brew install awscli
 brew install ghq
 
 brew tap sanemat/font
-brew install ricty --with-powerline
+brew install ricty
 cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 fc-cache -vf
 

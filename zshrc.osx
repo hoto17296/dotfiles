@@ -10,66 +10,6 @@ alias diff='git diff'
 export BROWSER=open
 
 
-# iTerm 関連
-
-function set-term-bgcolor {
-  local R=$(($1*257))
-  local G=$(($2*257))
-  local B=$(($3*257))
-  osascript <<EOF
-    tell application "iTerm"
-      tell current session of first window
-        set background color to {${R},${G},${B}}
-      end tell
-    end tell
-EOF
-}
-
-function set-term-tab-title {
-  echo -ne "\033]0;$1\007"
-}
-
-function set-term-tab-color {
-  echo -ne "\033]6;1;bg;red;brightness;$1\a"
-  echo -ne "\033]6;1;bg;green;brightness;$2\a"
-  echo -ne "\033]6;1;bg;blue;brightness;$3\a"
-}
-
-function reset-term-tab-color {
-  echo -ne "\033]6;1;bg;*;default\a"
-}
-
-
-# すごいssh
-
-function ext-ssh {
-  if executable is_production && is_production $@; then
-    set-term-bgcolor 85 17 17
-    set-term-tab-color 255 51 51
-  else
-    set-term-bgcolor 17 17 85
-    set-term-tab-color 51 51 255
-  fi
-
-  \ssh $@
-
-  set-term-bgcolor 0 0 0
-  reset-term-tab-color
-}
-compdef _ssh ext-ssh=ssh
-
-alias ssh='ext-ssh'
-alias s='ext-ssh'
-
-
-# ディレクトリ移動時にタブのタイトルにディレクトリ名を表示する
-
-function set-term-tab-title-dirname {
-  set-term-tab-title $(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
-}
-add-zsh-hook chpwd set-term-tab-title-dirname
-
-
 # ディレクトリ移動時に ls の結果を表示する
 # http://qiita.com/yuyuchu3333/items/b10542db482c3ac8b059
 

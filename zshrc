@@ -67,6 +67,8 @@ export AUTOENV_FILE_LEAVE='.autoenv.zsh'
 export AUTOENV_HANDLE_LEAVE=1
 
 zplug "Tarrasch/zsh-autoenv"
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -131,48 +133,9 @@ alias gpl='git pull origin $(git current-branch)'
 alias gps='git push origin $(git current-branch)'
 
 
-# プロンプト
-
-function prompt-face {
-  local venv
-  venv-activated && venv='v' || venv=''
-  echo "%(?:%F{green}${venv}(^_^)${venv}:%F{red}${venv}(>_<%)${venv}%s)%f"
-}
-
-function prompt-git-status {
-  local branch st color
-  inside-git-work-tree || return
-
-  branch=$(basename `git current-branch`)
-
-  st=`git status 2> /dev/null`
-  if [[ $st =~ 'nothing to commit' ]]; then
-    color=%f
-  elif [[ $st =~ 'untracked files present' ]]; then
-    color=%F{yellow}
-  else
-    color=%F{red}
-  fi
-
-  echo "$color($branch)%f%b"
-}
-
-PROMPT='$(prompt-face)%M:%c$(prompt-git-status)$ '
-SPROMPT='%F{yellow}(?_?)%fもしかして: %B%r%b [y/N/a/e]? '
-RPROMPT='`date +"%Y/%m/%d(%a) %k:%M:%S"`'
-
-setopt prompt_subst      # プロンプト文字列を評価する
-setopt transient_rprompt # 古い右プロンプトを消す
-
-
 # peco
 
 executable peco && source $HOME/.zshrc.peco
-
-
-# Jupyter Notebook
-
-executable jupyter && alias start-jupyter="jupyter notebook --notebook-dir=${HOME}/Dropbox/jupyter --NotebookApp.token="
 
 
 # OS固有設定

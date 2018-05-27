@@ -6,7 +6,7 @@ if dein#load_state('~/.cache/dein')
 
   call dein#add('Shougo/dein.vim')
   call dein#add('itchyny/lightline.vim')
-  call dein#add('tomasr/molokai')
+  call dein#add('connorholyday/vim-snazzy')
   call dein#add('Townk/vim-autoclose')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('airblade/vim-gitgutter')
@@ -21,7 +21,7 @@ if dein#check_install()
 endif
 
 " カラーリングする
-colorscheme molokai
+colorscheme snazzy
 
 " タイトルを表示
 set title
@@ -57,3 +57,6 @@ inoremap jj <ESC>
 
 " カレント行をハイライト
 set cursorline
+
+" lightline
+let g:lightline = { 'colorscheme': 'wombat' }

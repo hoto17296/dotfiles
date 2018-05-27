@@ -21,7 +21,7 @@ fc-cache -vf
 
 brew tap caskroom/cask
 
-brew cask install iterm2
+brew cask install hyper
 brew cask install vivaldi
 brew cask install docker
 brew cask install java

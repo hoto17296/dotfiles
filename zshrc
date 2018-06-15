@@ -105,9 +105,10 @@ SAVEHIST=10000 # ファイルへの保存件数
 
 setopt extended_history       # タイムスタンプと実行時間を記録
 setopt hist_expire_dups_first # 削除時に重複する履歴から削除
-setopt hist_ignore_dups       # 直前の重複するコマンドは無視
+setopt hist_ignore_all_dups   # 重複するコマンドは履歴に記録しない
 setopt hist_ignore_space      # スペースから始まるコマンドは無視
 setopt hist_verify            # 補完時に編集可能にする
+setopt hist_reduce_blanks     # 重複スペースは除去して履歴に記録する
 setopt inc_append_history     # インクリメンタルサーチに追加
 setopt share_history          # 端末間で履歴を共有
 

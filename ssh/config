@@ -1,3 +1,5 @@
+# vim: set ft=sshconfig :
+
 Include conf.d/*
 
 Host mrkch.jp

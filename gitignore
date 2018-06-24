@@ -9,3 +9,4 @@ dump.rdb
 .venv
 .idea
 __pycache__
+*.egg-info

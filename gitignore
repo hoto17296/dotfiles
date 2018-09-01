@@ -10,3 +10,4 @@ dump.rdb
 .idea
 __pycache__
 *.egg-info
+*.pyc

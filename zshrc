@@ -59,7 +59,15 @@ function venv-activated {
 
 # プラグイン設定
 
-export ZPLUG_HOME=/usr/local/opt/zplug
+case "${OSTYPE}" in
+darwin*)
+  export ZPLUG_HOME=/usr/local/opt/zplug
+  ;;
+linux*)
+  export ZPLUG_HOME=$HOME/.zplug
+  ;;
+esac
+
 source $ZPLUG_HOME/init.zsh
 
 export AUTOENV_FILE_ENTER='.autoenv.zsh'

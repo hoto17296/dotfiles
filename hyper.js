@@ -4,5 +4,6 @@ module.exports = {
     fontFamily: "Ricty, Menlo, monospace",
     padding: "0",
   },
-  plugins: ["hyper-snazzy", "hypercwd"],
+  plugins: ["hyper-snazzy"],
+  localPlugins: ["hypercwd"],
 }

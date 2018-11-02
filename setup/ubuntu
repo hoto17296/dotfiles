@@ -1,0 +1,36 @@
+#!/bin/bash -eu
+
+sudo apt update
+sudo apt install -y wget git zsh neovim
+
+DIR=$HOME/.dotfiles
+
+if ! [ -d $DIR ]; then
+	git clone https://github.com/hoto17296/dotfiles.git $DIR
+fi
+
+dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DIR/$1 $HOME/.$1; fi }
+
+dotalias gitconfig
+dotalias gitignore
+
+wget https://github.com/peco/peco/releases/download/v0.5.3/peco_linux_arm64.tar.gz -O peco.tar.gz
+tar xzf peco.tar.gz
+rm peco.tar.gz
+sudo mv peco_linux_arm64/peco /usr/local/bin
+rm -rf peco_linux_arm64
+dotalias peco
+
+mkdir $HOME/.config
+ln -s $DIR/nvim $HOME/.config/nvim
+DEIN_DIR=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
+if ! [ -d $DEIN_DIR ]; then
+  git clone https://github.com/Shougo/dein.vim.git $DEIN_DIR
+fi
+
+git clone https://github.com/zplug/zplug $HOME/.zplug
+dotalias zsh
+dotalias zshrc
+dotalias zshrc.peco
+sudo sed -i -E 's/(auth\s+)required(\s+pam_shells\.so)/\1sufficient\2/g' /etc/pam.d/chsh
+chsh -s `which zsh`

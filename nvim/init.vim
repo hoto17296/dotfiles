@@ -11,6 +11,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('othree/eregex.vim')
+  call dein#add('posva/vim-vue')
 
   call dein#end()
   call dein#save_state()

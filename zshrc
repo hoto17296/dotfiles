@@ -2,7 +2,6 @@ autoload -Uz add-zsh-hook
 autoload -Uz compinit && compinit
 
 export EDITOR=nvim
-export LANG=ja_JP.UTF-8
 export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;46'
 export GOPATH=${HOME}/.go
 export PATH=${GOPATH}/bin:$PATH
@@ -30,7 +29,6 @@ _parallel () {
 setopt correct         # typo補完
 setopt nobeep          # beep音鳴らさない
 setopt no_flow_control # Ctrl+S / Ctrl+Q によるフロー制御を使わない
-setopt ignoreeof       # Ctrl+D でログアウトしない
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を区別しない
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完

@@ -8,6 +8,7 @@ dump.rdb
 .autoenv.zsh
 .venv
 .idea
+.vscode
 __pycache__
 *.egg-info
 *.pyc

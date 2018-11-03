@@ -3,8 +3,8 @@ setopt ignoreeof # Ctrl+D でログアウトしない
 export PATH="$(ghq root)/github.com/hoto17296/bin:$PATH"
 export LANG=ja_JP.UTF-8
 
-alias l='ls -GFlah'
 export LSCOLORS=gxfxcxdxbxegedabagacag
+alias l='ls -GFlah'
 
 alias diff='git diff'
 

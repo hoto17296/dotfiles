@@ -1,8 +1,9 @@
 # This image is used to test Ubuntu setup script.
+
 FROM ubuntu:18.04
 
 RUN apt update \
-  && apt install -y sudo \
+  && apt install -y curl sudo \
   && apt clean \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -m -s /bin/bash user \

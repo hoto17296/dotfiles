@@ -1,18 +1,24 @@
+#!/bin/zsh
+
 autoload -Uz add-zsh-hook
 autoload -Uz compinit && compinit
 
-export EDITOR=nvim
-export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;46'
+
+# OS固有設定 (前)
+
+PRELOAD_SCRIPT=$HOME/.zsh/$(uname | awk '{print tolower($0)}').preload.sh
+[ -f $PRELOAD_SCRIPT ] && source $PRELOAD_SCRIPT
+
+
+# もろもろ
+
 export GOPATH=${HOME}/.go
 export PATH=${GOPATH}/bin:$PATH
 
 bindkey -d # キーバインドリセット
 bindkey -e # emacsモード
 
-alias be='bundle exec'
 alias pag='ps aux | grep'
-alias rake='noglob rake'
-alias vg='vagrant'
 alias v=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
@@ -34,11 +40,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 大文字小文字を区�
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} # 色付き補完
 
 
-# パスを読み込み
-
-[ -f ~/.zshrc_path.local ] && source ~/.zshrc_path.local
-
-
 # 関数やコマンドが存在するかどうか
 
 function executable {
@@ -56,15 +57,6 @@ function venv-activated {
 
 
 # プラグイン設定
-
-case "${OSTYPE}" in
-darwin*)
-  export ZPLUG_HOME=/usr/local/opt/zplug
-  ;;
-linux*)
-  export ZPLUG_HOME=$HOME/.zplug
-  ;;
-esac
 
 source $ZPLUG_HOME/init.zsh
 
@@ -94,7 +86,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias pd='popd'
-alias cdgr='cd $(git rev-parse --show-toplevel)' # リポジトリのルートに移動
 
 setopt auto_cd           # ディレクトリ名だけで移動
 setopt auto_pushd        # pushdで移動
@@ -102,7 +93,7 @@ setopt pushd_ignore_dups # pushdの履歴は残さない
 
 
 # 履歴
-# zsh の history は fc -l のエイリアス
+# ※ zsh の history は fc -l のエイリアス
 
 [ -z $HISTFILE ] && HISTFILE=$HOME/.zsh_history
 
@@ -142,19 +133,13 @@ alias gps='git push origin $(git current-branch)'
 
 # peco
 
-executable peco && source $HOME/.zshrc.peco
+executable peco && source $HOME/.zsh/peco.sh
 
 
-# OS固有設定
+# OS固有設定 (後)
 
-case "${OSTYPE}" in
-darwin*)
-  source $HOME/.zshrc.osx
-  ;;
-linux*)
-  alias l='ls -Flah --color'
-  ;;
-esac
+POSTLOAD_SCRIPT=$HOME/.zsh/$(uname | awk '{print tolower($0)}').postload.sh
+[ -f $POSTLOAD_SCRIPT ] && source $POSTLOAD_SCRIPT
 
 
 # マシン固有設定

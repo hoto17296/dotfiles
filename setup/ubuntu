@@ -1,7 +1,7 @@
 #!/bin/bash -eu
 
 sudo apt update
-sudo apt install -y wget git zsh neovim
+sudo apt install -y git zsh neovim
 
 DIR=$HOME/.dotfiles
 
@@ -14,11 +14,11 @@ dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DIR/$1 $HOME/.$1; fi }
 dotalias gitconfig
 dotalias gitignore
 
-wget https://github.com/peco/peco/releases/download/v0.5.3/peco_linux_arm64.tar.gz -O peco.tar.gz
+curl https://github.com/peco/peco/releases/download/v0.5.3/peco_linux_amd64.tar.gz -o peco.tar.gz
 tar xzf peco.tar.gz
 rm peco.tar.gz
-sudo mv peco_linux_arm64/peco /usr/local/bin
-rm -rf peco_linux_arm64
+sudo mv peco_linux_amd64/peco /usr/local/bin
+rm -rf peco_linux_amd64
 dotalias peco
 
 mkdir $HOME/.config

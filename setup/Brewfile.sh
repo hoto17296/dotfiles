@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -eu
 
 brew update
 brew upgrade
@@ -13,6 +13,8 @@ brew install peco
 brew install jq
 brew install awscli
 brew install ghq
+brew install arp-scan
+brew install nkf
 
 brew tap sanemat/font
 brew install ricty
@@ -32,6 +34,8 @@ brew cask install postico
 brew cask install sequel-pro
 brew cask install appcleaner
 brew cask install insomnia
+brew cask install visual-studio-code
+brew cask install microsoft-office
 
 brew install mas
 

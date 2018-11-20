@@ -26,6 +26,7 @@ dotalias ssh
 dotalias gemrc
 dotcopy  npmrc
 dotalias peco
+ln -s $DIR/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
 require nvim
 ln -s $DIR/nvim $HOME/.config/nvim

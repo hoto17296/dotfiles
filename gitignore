@@ -12,3 +12,4 @@ dump.rdb
 __pycache__
 *.egg-info
 *.pyc
+*.code-workspace

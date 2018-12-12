@@ -17,6 +17,7 @@
   amn = commit --all --amend --no-edit
   tree = log --graph --decorate --oneline
   hist = log --patch
+  unstage = reset -q HEAD --
   recent-branch = for-each-ref --format='%(refname:short)' --sort=-committerdate refs/heads
   current-branch = rev-parse --abbrev-ref HEAD
 [diff]

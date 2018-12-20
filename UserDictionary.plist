@@ -65,6 +65,12 @@
 	</dict>
 	<dict>
 		<key>phrase</key>
+		<string>( ˘ω˘)</string>
+		<key>shortcut</key>
+		<string>すやぁ</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
 		<string>( ✹‿✹ )◯◯だァーーーーーーーーーーー！！！！！！！！！！！（ﾄｩﾙﾛﾛﾃｯﾃﾚｰｗｗｗｗｗｗﾃﾚﾃｯﾃﾃｗｗｗｗﾃﾃｰｗｗｗ）ｗｗｗﾄｺｽﾞﾝﾄｺﾄｺｼﾞｮﾝｗｗｗｽﾞｽﾞﾝｗｗｗｗｗ（ﾃﾃﾛﾘﾄﾃｯﾃﾛﾃﾃｰｗｗｗｗ）</string>
 		<key>shortcut</key>
 		<string>だぁー</string>

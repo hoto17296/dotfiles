@@ -22,6 +22,18 @@
 	</dict>
 	<dict>
 		<key>phrase</key>
+		<string>＼(^o^)／</string>
+		<key>shortcut</key>
+		<string>おわた</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
+		<string>／(^o^)＼</string>
+		<key>shortcut</key>
+		<string>おわた</string>
+	</dict>
+	<dict>
+		<key>phrase</key>
 		<string>(๑•̀ㅂ•́)و✧</string>
 		<key>shortcut</key>
 		<string>ぐっ</string>

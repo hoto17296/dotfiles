@@ -28,6 +28,9 @@ dotcopy  npmrc
 dotalias peco
 ln -s $DIR/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
 
+mkdir -p $HOME/.config/karabiner
+ln -s $DIR/karabiner.json $HOME/.config/karabiner/karabiner.json
+
 require nvim
 ln -s $DIR/nvim $HOME/.config/nvim
 DEIN_DIR=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim

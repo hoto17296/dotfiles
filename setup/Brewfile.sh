@@ -15,6 +15,7 @@ brew install awscli
 brew install ghq
 brew install arp-scan
 brew install nkf
+brew install icdiff
 
 brew tap sanemat/font
 brew install ricty

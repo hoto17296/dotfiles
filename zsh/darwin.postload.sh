@@ -6,7 +6,7 @@ export LANG=ja_JP.UTF-8
 export LSCOLORS=gxfxcxdxbxegedabagacag
 alias l='ls -GFlah'
 
-alias diff='git diff'
+alias diff='icdiff'
 
 # Jupyter Notebook 起動時にブラウザが開かない問題の対応
 # http://qiita.com/katsuyan/items/95bb7dbcd1671cc4e201

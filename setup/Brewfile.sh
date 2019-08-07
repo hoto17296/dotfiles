@@ -34,6 +34,7 @@ brew cask install appcleaner
 brew cask install insomnia
 brew cask install visual-studio-code
 brew cask install microsoft-office
+brew cask install karabiner-elements
 
 brew install mas
 

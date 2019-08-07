@@ -29,9 +29,7 @@ brew cask install vivaldi
 brew cask install docker
 brew cask install java
 brew cask install google-chrome
-brew cask install cmd-eikana
 brew cask install postico
-brew cask install sequel-pro
 brew cask install appcleaner
 brew cask install insomnia
 brew cask install visual-studio-code
@@ -40,7 +38,7 @@ brew cask install microsoft-office
 brew install mas
 
 mas install 409183694   # Keynote
-mas install 443987910   # 1Password
+mas install 1333542190  # 1Password 7
 mas install 803453959   # Slack
 mas install 485812721   # TweetDeck
 mas install 407963104   # Pixelmator

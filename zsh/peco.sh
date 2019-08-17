@@ -124,11 +124,9 @@ bindkey '^x^d' peco-cdr
 # リポジトリ移動
 
 function peco-ghq() {
-  local repo=$(ghq list | peco --prompt "REPOSITORY>")
-  [ -z "$repo" ] && return
-  # ghq look で移動した状態で iTerm2 の新しいタブを開くと前のタブの
-  # ディレクトリが維持されないので ghq look ではなく cd で移動する
-  BUFFER="cd \$(ghq root)/$repo"
+  local repo=$(find $(ghq root) -maxdepth 5 -type d -name .git | sed -E "s|^$(ghq root)/?||g" | sed -E 's|/\.git$||g' | peco --prompt 'REPOSITORY>')
+  [ -z "${repo}" ] && return
+  BUFFER='cd $(ghq root)/'${repo}
   CURSOR=$#BUFFER
 }
 

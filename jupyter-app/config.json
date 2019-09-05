@@ -1,0 +1,15 @@
+{
+  "docker": {
+    "image": "hoto17296/anaconda3-ja",
+    "opts": {
+      "volume": [
+        "${HOME}/notebooks:/notebooks"
+      ]
+    }
+  },
+  "container": {
+    "opts": {
+      "notebook-dir": "/notebooks"
+    }
+  }
+}

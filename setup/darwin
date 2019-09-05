@@ -31,6 +31,9 @@ ln -s $DIR/vscode/keybindings.json $HOME/Library/Application\ Support/Code/User/
 mkdir -p $HOME/.config/karabiner
 ln -s $DIR/karabiner.json $HOME/.config/karabiner/karabiner.json
 
+mkdir -p $HOME/notebooks
+ln -s $DIR/jupyter-app $HOME/.config/jupyter-app
+
 require nvim
 ln -s $DIR/nvim $HOME/.config/nvim
 DEIN_DIR=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim

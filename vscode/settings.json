@@ -1,0 +1,10 @@
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.tabSize": 2,
+    "files.associations": {
+        "*.jinja": "html"
+    },
+    "[python]": {
+        "editor.tabSize": 4
+    }
+}

@@ -34,7 +34,7 @@ ln -s $DIR/vscode/settings.json $VSCODE_DIR/settings.json
 mkdir -p $HOME/.config/karabiner
 ln -s $DIR/karabiner.json $HOME/.config/karabiner/karabiner.json
 
-mkdir -p $HOME/notebooks
+mkdir -p $HOME/Notebooks
 ln -s $DIR/jupyter-app $HOME/.config/jupyter-app
 
 require nvim

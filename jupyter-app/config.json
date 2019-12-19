@@ -3,7 +3,7 @@
     "image": "hoto17296/anaconda3-ja",
     "opts": {
       "volume": [
-        "${HOME}/notebooks:/notebooks"
+        "${HOME}/Notebooks:/notebooks"
       ]
     }
   },

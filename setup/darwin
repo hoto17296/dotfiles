@@ -47,4 +47,3 @@ fi
 require zsh
 dotalias zsh
 dotalias zshrc
-chsh -s `which zsh`

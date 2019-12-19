@@ -35,6 +35,7 @@ brew cask install insomnia
 brew cask install visual-studio-code
 brew cask install microsoft-office
 brew cask install karabiner-elements
+brew cask install vlc
 
 brew install mas
 
@@ -47,3 +48,5 @@ mas install 1091189122  # Bear
 mas install 1024640650  # CotEditor
 mas install 568494494   # Pocket
 mas install 411680127   # WiFi Scanner
+mas install 405399194   # Kindle
+mas install 1278508951  # Trello

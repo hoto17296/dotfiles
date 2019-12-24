@@ -22,8 +22,6 @@ brew install ricty
 cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
 fc-cache -vf
 
-brew tap caskroom/cask
-
 brew cask install hyper
 brew cask install vivaldi
 brew cask install docker

@@ -27,6 +27,10 @@ dotalias gemrc
 dotcopy  npmrc
 dotalias peco
 
+require ghq
+ghq get https://github.com/hoto17296/hypercwd.git
+ln -s $(ghq root)/github.com/hoto17296/hypercwd $HOME/.hyper_plugins/local/hypercwd
+
 VSCODE_DIR=$HOME/Library/Application\ Support/Code/User
 ln -s $DIR/vscode/keybingings.json $VSCODE_DIR/keybingings.json
 ln -s $DIR/vscode/settings.json $VSCODE_DIR/settings.json

@@ -119,6 +119,44 @@
                         ]
                     },
                     {
+                        "description": "option + [ で内臓ディスプレイのバックライトを消す",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "PATH=$PATH:/usr/local/bin $(/usr/local/bin/ghq root)/github.com/hoto17296/bin/builtin-display-brightness 0.0"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "option + ] で内臓ディスプレイのバックライトを点ける",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "PATH=$PATH:/usr/local/bin $(/usr/local/bin/ghq root)/github.com/hoto17296/bin/builtin-display-brightness 0.7"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "PgUp/PgDn でタブ移動",
                         "manipulators": [
                             {

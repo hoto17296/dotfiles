@@ -119,7 +119,7 @@
                         ]
                     },
                     {
-                        "description": "option + [ で内臓ディスプレイのバックライトを消す",
+                        "description": "option + [ で内臓ディスプレイの輝度を下げる",
                         "manipulators": [
                             {
                                 "from": {
@@ -131,14 +131,14 @@
                                     }
                                 },
                                 "to": {
-                                    "shell_command": "PATH=$PATH:/usr/local/bin $(/usr/local/bin/ghq root)/github.com/hoto17296/bin/builtin-display-brightness 0.0"
+                                    "key_code": "display_brightness_decrement"
                                 },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "option + ] で内臓ディスプレイのバックライトを点ける",
+                        "description": "option + ] で内臓ディスプレイの輝度を上げる",
                         "manipulators": [
                             {
                                 "from": {
@@ -150,7 +150,7 @@
                                     }
                                 },
                                 "to": {
-                                    "shell_command": "PATH=$PATH:/usr/local/bin $(/usr/local/bin/ghq root)/github.com/hoto17296/bin/builtin-display-brightness 0.7"
+                                    "key_code": "display_brightness_increment"
                                 },
                                 "type": "basic"
                             }

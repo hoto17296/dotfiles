@@ -119,6 +119,29 @@
                         ]
                     },
                     {
+                        "description": "command + fn + 1 でミラーリング設定を切り替える",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "fn"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "display_brightness_decrement",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "option + [ で内臓ディスプレイの輝度を下げる",
                         "manipulators": [
                             {

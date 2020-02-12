@@ -34,7 +34,9 @@ ln -s $(ghq root)/github.com/hoto17296/hypercwd $HOME/.hyper_plugins/local/hyper
 ghq get https://github.com/hoto17296/bin.git
 
 VSCODE_DIR=$HOME/Library/Application\ Support/Code/User
+\rm -f $VSCODE_DIR/keybingings.json
 ln -s $DIR/vscode/keybingings.json $VSCODE_DIR/keybingings.json
+\rm -f $VSCODE_DIR/settings.json
 ln -s $DIR/vscode/settings.json $VSCODE_DIR/settings.json
 
 mkdir -p $HOME/.config/karabiner

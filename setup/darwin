@@ -8,11 +8,11 @@ require git
 DIR=$HOME/.dotfiles
 
 if ! [ -d $DIR ]; then
-	git clone https://github.com/hoto17296/dotfiles.git $DIR
+  git clone https://github.com/hoto17296/dotfiles.git $DIR
 fi
 
 if ! enabled brew; then
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 sh $DIR/setup/Brewfile.sh
 

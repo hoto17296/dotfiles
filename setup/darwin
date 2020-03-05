@@ -25,7 +25,6 @@ dotalias hyper.js
 dotalias ssh
 dotalias gemrc
 dotcopy  npmrc
-dotalias peco
 
 require ghq
 ghq get https://github.com/hoto17296/hypercwd.git
@@ -34,6 +33,8 @@ ln -s $(ghq root)/github.com/hoto17296/hypercwd $HOME/.hyper_plugins/local/hyper
 ghq get https://github.com/hoto17296/bin.git
 
 ln -s $DIR/git $XDG_CONFIG_HOME/git
+
+ln -s $DIR/peco $XDG_CONFIG_HOME/peco
 
 VSCODE_DIR=$HOME/Library/Application\ Support/Code/User
 \rm -f $VSCODE_DIR/keybingings.json

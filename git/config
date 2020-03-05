@@ -24,8 +24,6 @@
   renames = true
 [fetch]
   prune = true
-[core]
-  excludesfile = ~/.gitignore
 [include]
   path = ~/.gitconfig.local
 [merge]

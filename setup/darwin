@@ -6,6 +6,8 @@ require() { if ! enabled $1; then echo "Please install $1."; exit 1; fi }
 require git
 
 DIR=$HOME/.dotfiles
+XDG_CONFIG_HOME=$HOME/.config
+mkdir -p $XDG_CONFIG_HOME
 
 if ! [ -d $DIR ]; then
   git clone https://github.com/hoto17296/dotfiles.git $DIR
@@ -20,8 +22,6 @@ dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DIR/$1 $HOME/.$1; fi }
 dotcopy() { if ! [ -L $HOME/.$1 ]; then cp $DIR/$1 $HOME/.$1; fi }
 
 dotalias hyper.js
-dotalias gitconfig
-dotalias gitignore
 dotalias ssh
 dotalias gemrc
 dotcopy  npmrc
@@ -33,21 +33,23 @@ ln -s $(ghq root)/github.com/hoto17296/hypercwd $HOME/.hyper_plugins/local/hyper
 
 ghq get https://github.com/hoto17296/bin.git
 
+ln -s $DIR/git $XDG_CONFIG_HOME/git
+
 VSCODE_DIR=$HOME/Library/Application\ Support/Code/User
 \rm -f $VSCODE_DIR/keybingings.json
 ln -s $DIR/vscode/keybingings.json $VSCODE_DIR/keybingings.json
 \rm -f $VSCODE_DIR/settings.json
 ln -s $DIR/vscode/settings.json $VSCODE_DIR/settings.json
 
-mkdir -p $HOME/.config/karabiner
-\rm -f $HOME/.config/karabiner/karabiner.json
-ln -s $DIR/karabiner.json $HOME/.config/karabiner/karabiner.json
+mkdir -p $XDG_CONFIG_HOME/karabiner
+\rm -f $XDG_CONFIG_HOME/karabiner/karabiner.json
+ln -s $DIR/karabiner.json $XDG_CONFIG_HOME/karabiner/karabiner.json
 
 mkdir -p $HOME/Notebooks
-ln -s $DIR/jupyter-app $HOME/.config/jupyter-app
+ln -s $DIR/jupyter-app $XDG_CONFIG_HOME/jupyter-app
 
 require nvim
-ln -s $DIR/nvim $HOME/.config/nvim
+ln -s $DIR/nvim $XDG_CONFIG_HOME/nvim
 DEIN_DIR=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 if ! [ -d $DEIN_DIR ]; then
   git clone https://github.com/Shougo/dein.vim.git $DEIN_DIR

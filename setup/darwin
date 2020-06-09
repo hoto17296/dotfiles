@@ -56,6 +56,13 @@ if ! [ -d $DEIN_DIR ]; then
   git clone https://github.com/Shougo/dein.vim.git $DEIN_DIR
 fi
 
+HACKGEN_VERSION=v2.0.0
+TMP_FILE=hackgen.zip
+wget -O ${TMP_FILE} https://github.com/yuru7/HackGen/releases/download/${HACKGEN_VERSION}/HackGen_${HACKGEN_VERSION}.zip
+unzip ${TMP_FILE}
+cp HackGen_${HACKGEN_VERSION}/HackGen35-{Regular,Bold}.ttf ${HOME}/Library/Fonts
+rm -rf ${TMP_FILE} HackGen_${HACKGEN_VERSION}
+
 require zsh
 dotalias zsh
 dotalias zshrc

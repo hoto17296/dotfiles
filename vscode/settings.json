@@ -6,5 +6,7 @@
     },
     "[python]": {
         "editor.tabSize": 4
-    }
+    },
+    "window.zoomLevel": 1,
+    "editor.fontFamily": "HackGen35, Menlo, monospace"
 }

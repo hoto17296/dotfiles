@@ -17,11 +17,6 @@ brew install arp-scan
 brew install nkf
 brew install icdiff
 
-brew tap sanemat/font
-brew install ricty
-cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ${HOME}/Library/Fonts/
-fc-cache -vf
-
 brew cask install hyper
 brew cask install vivaldi
 brew cask install docker

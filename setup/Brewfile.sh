@@ -29,7 +29,6 @@ brew cask install visual-studio-code
 brew cask install microsoft-office
 brew cask install karabiner-elements
 brew cask install vlc
-brew cask install zoomus
 brew cask install typora
 
 brew install mas

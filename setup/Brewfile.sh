@@ -30,6 +30,7 @@ brew cask install microsoft-office
 brew cask install karabiner-elements
 brew cask install vlc
 brew cask install typora
+brew cask install wireshark
 
 brew install mas
 

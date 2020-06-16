@@ -3,18 +3,18 @@
 brew update
 brew upgrade
 
-brew install zplug
+brew install arp-scan
+brew install ghq
+brew install icdiff
+brew install jq
 brew install neovim
-brew install wget
-brew install tree
-brew install rmtrash
+brew install nkf
 brew install oysttyer
 brew install peco
-brew install jq
-brew install ghq
-brew install arp-scan
-brew install nkf
-brew install icdiff
+brew install tree
+brew install rmtrash
+brew install wget
+brew install zplug
 
 brew cask install hyper
 brew cask install vivaldi

@@ -11,7 +11,6 @@ brew install rmtrash
 brew install oysttyer
 brew install peco
 brew install jq
-brew install awscli
 brew install ghq
 brew install arp-scan
 brew install nkf

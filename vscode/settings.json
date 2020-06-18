@@ -8,5 +8,6 @@
         "editor.tabSize": 4
     },
     "window.zoomLevel": 1,
-    "editor.fontFamily": "HackGen35, Menlo, monospace"
+    "editor.fontFamily": "HackGen35, Menlo, monospace",
+    "editor.formatOnSave": true
 }

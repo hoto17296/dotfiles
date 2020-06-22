@@ -8,6 +8,7 @@ brew install ghq
 brew install icdiff
 brew install jq
 brew install neovim
+brew install node@12
 brew install nkf
 brew install oysttyer
 brew install peco

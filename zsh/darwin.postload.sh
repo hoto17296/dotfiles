@@ -15,7 +15,7 @@ alias jupyter-app="(cd $(ghq root)/github.com/hoto17296/jupyter-app && npm start
 
 alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 
-alias psql="docker run --rm -it postgres:12 psql"
+alias psql="docker run --rm -it --net=host postgres:12 psql"
 
 # Jupyter Notebook 起動時にブラウザが開かない問題の対応
 # http://qiita.com/katsuyan/items/95bb7dbcd1671cc4e201

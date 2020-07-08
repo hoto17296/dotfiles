@@ -29,6 +29,6 @@
 [merge]
   ff = false
 [pull]
-  rebase = preserve
+  rebase = merges
 [ghq]
   root = ~/Work

@@ -249,7 +249,7 @@
                         ]
                     },
                     {
-                        "description": "option + v で Vivladi にフォーカスする",
+                        "description": "option + v で Vivaldi にフォーカスする",
                         "manipulators": [
                             {
                                 "from": {

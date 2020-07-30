@@ -209,6 +209,63 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "option + c で Visual Studio Code にフォーカスする",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "osascript -e 'tell application \"Code\" to activate'"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "option + s で Slack にフォーカスする",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "osascript -e 'tell application \"Slack\" to activate'"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "option + v で Vivladi にフォーカスする",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "osascript -e 'tell application \"Vivaldi\" to activate'"
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },

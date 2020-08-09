@@ -12,6 +12,6 @@ Host gpu.mrkch.jp
 
 Host *
   IdentityFile ~/.ssh/id_ed25519
-  IPQoS lowdelay throughput
+  IPQoS cs1
 
 XAuthLocation /usr/X11/bin/xauth

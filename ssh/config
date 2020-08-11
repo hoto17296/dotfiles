@@ -10,6 +10,9 @@ Host mrkch.jp
 Host gpu.mrkch.jp
   User hoto
 
+Host vpn.mrkch.jp
+  User ubuntu
+
 Host *
   IdentityFile ~/.ssh/id_ed25519
   IPQoS cs1

@@ -22,6 +22,7 @@ brew cask install vivaldi
 brew cask install docker
 brew cask install java
 brew cask install google-chrome
+brew cask install google-japanese-ime
 brew cask install postico
 brew cask install appcleaner
 brew cask install insomnia

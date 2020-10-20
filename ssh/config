@@ -15,6 +15,7 @@ Host vpn.mrkch.jp
 
 Host *
   IdentityFile ~/.ssh/id_ed25519
+  ServerAliveInterval 60
   IPQoS cs1
 
 XAuthLocation /usr/X11/bin/xauth

@@ -13,5 +13,7 @@
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--line-length=120"
-    ]
+    ],
+    "python.pythonPath": "/usr/bin/python3",
+    "python.defaultInterpreterPath": "python3"
 }

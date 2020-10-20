@@ -19,6 +19,7 @@ brew install zplug
 
 brew cask install hyper
 brew cask install vivaldi
+brew cask install firefox
 brew cask install docker
 brew cask install java
 brew cask install google-chrome
@@ -40,7 +41,6 @@ mas install 1333542190  # 1Password 7
 mas install 803453959   # Slack
 mas install 485812721   # TweetDeck
 mas install 407963104   # Pixelmator
-mas install 1091189122  # Bear
 mas install 1024640650  # CotEditor
 mas install 568494494   # Pocket
 mas install 411680127   # WiFi Scanner

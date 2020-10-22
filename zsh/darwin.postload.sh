@@ -12,6 +12,7 @@ alias python=python3
 alias pip=pip3
 
 alias jupyter-app="(cd $(ghq root)/github.com/hoto17296/jupyter-app && npm start)"
+alias jupyter-app-bash='docker exec -it --user jovyan jupyter-app bash'
 
 alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 

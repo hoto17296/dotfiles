@@ -1,15 +1,10 @@
 {
   "docker": {
-    "image": "hoto17296/anaconda3-ja",
+    "image": "ghcr.io/hoto17296/jupyter",
     "opts": {
       "volume": [
-        "${HOME}/Notebooks:/notebooks"
+        "${HOME}/Notebooks:/home/jovyan/work"
       ]
-    }
-  },
-  "container": {
-    "opts": {
-      "notebook-dir": "/notebooks"
     }
   }
 }

@@ -132,3 +132,27 @@ function peco-ghq() {
 
 zle -N peco-ghq
 bindkey '^g^h' peco-ghq
+
+
+# Docker Image ID を選択
+function peco-docker-images() {
+  local images="$(docker images | tail +2 | sort | peco --prompt 'DOCKER IMAGES>' | awk '{print $3}' ORS=' ')"
+  [ -z "$images" ] && return
+  BUFFER="$LBUFFER$images$RBUFFER"
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-docker-images
+bindkey '^x^i' peco-docker-images
+
+
+# Docker Container ID を選択
+function peco-docker-containers() {
+  local containers="$(docker ps -a | tail +2 | sort | peco --prompt 'DOCKER CONTAINERS>' | awk '{print $1}' ORS=' ')"
+  [ -z "$containers" ] && return
+  BUFFER="$LBUFFER$containers$RBUFFER"
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-docker-containers
+bindkey '^x^k' peco-docker-containers

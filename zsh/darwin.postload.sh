@@ -16,7 +16,9 @@ alias jupyter-app-bash='docker exec -it --user jovyan jupyter-app bash'
 
 alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 
-alias psql="docker run --rm -it --net=host postgres:12 psql"
+alias psql="docker run --rm -it --net=host postgres:11 psql"
+alias pg_dump='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_dump'
+alias pg_restore='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_restore'
 
 # Jupyter Notebook 起動時にブラウザが開かない問題の対応
 # http://qiita.com/katsuyan/items/95bb7dbcd1671cc4e201

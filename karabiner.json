@@ -101,18 +101,19 @@
                         ]
                     },
                     {
-                        "description": "Del で 1Password mini を開く",
+                        "description": "Del 長押しで 1Password mini を開く",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "delete_forward"
                                 },
-                                "to": {
+                                "to_if_held_down": {
                                     "key_code": "backslash",
                                     "modifiers": [
                                         "right_command",
                                         "right_option"
-                                    ]
+                                    ],
+                                    "repeat": false
                                 },
                                 "type": "basic"
                             }

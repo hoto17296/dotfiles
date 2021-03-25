@@ -22,5 +22,6 @@
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
-    ]
+    ],
+    "extensions.ignoreRecommendations": true
 }

@@ -21,6 +21,7 @@
   },
   {
     "key": "ctrl+shift+[",
-    "command": "workbench.action.terminal.kill"
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
   }
 ]

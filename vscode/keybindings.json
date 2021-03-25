@@ -1,5 +1,26 @@
 [
-  { "key": "ctrl+[", "command": "workbench.action.terminal.toggleTerminal", "when": "terminalFocus" },
-  { "key": "ctrl+]", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
-  { "key": "ctrl+]", "command": "workbench.action.terminal.toggleTerminal", "when": "editorTextFocus" }
+  {
+    "key": "ctrl+[",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+]",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+]",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+]",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "workbench.action.terminal.kill"
+  }
 ]

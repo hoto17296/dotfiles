@@ -37,8 +37,8 @@ ln -s $DIR/git $XDG_CONFIG_HOME/git
 ln -s $DIR/peco $XDG_CONFIG_HOME/peco
 
 VSCODE_DIR=$HOME/Library/Application\ Support/Code/User
-\rm -f $VSCODE_DIR/keybingings.json
-ln -s $DIR/vscode/keybingings.json $VSCODE_DIR/keybingings.json
+\rm -f $VSCODE_DIR/keybindings.json
+ln -s $DIR/vscode/keybindings.json $VSCODE_DIR/keybindings.json
 \rm -f $VSCODE_DIR/settings.json
 ln -s $DIR/vscode/settings.json $VSCODE_DIR/settings.json
 

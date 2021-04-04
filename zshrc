@@ -12,8 +12,10 @@ PRELOAD_SCRIPT=$HOME/.zsh/$(uname | awk '{print tolower($0)}').preload.sh
 
 # もろもろ
 
-export GOPATH=${HOME}/.go
-export PATH=${GOPATH}/bin:$PATH
+export XDG_CONFIG_HOME=${HOME}/.config
+export GOPATH=${XDG_CONFIG_HOME}/go
+export JUPYTER_CONFIG_DIR=${XDG_CONFIG_HOME}/jupyter
+export PATH=${GOPATH}/bin:${PATH}
 
 bindkey -d # キーバインドリセット
 bindkey -e # emacsモード

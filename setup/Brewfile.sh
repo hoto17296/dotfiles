@@ -8,9 +8,8 @@ brew install ghq
 brew install icdiff
 brew install jq
 brew install neovim
-brew install node@12
+brew install node@14
 brew install nkf
-brew install oysttyer
 brew install peco
 brew install tree
 brew install rmtrash
@@ -24,6 +23,7 @@ brew cask install docker
 brew cask install java
 brew cask install google-chrome
 brew cask install google-japanese-ime
+brew cask install google-drive
 brew cask install postico
 brew cask install appcleaner
 brew cask install insomnia
@@ -36,13 +36,13 @@ brew cask install wireshark
 
 brew install mas
 
-mas install 409183694   # Keynote
 mas install 1333542190  # 1Password 7
 mas install 803453959   # Slack
 mas install 485812721   # TweetDeck
 mas install 407963104   # Pixelmator
 mas install 1024640650  # CotEditor
 mas install 568494494   # Pocket
-mas install 411680127   # WiFi Scanner
 mas install 405399194   # Kindle
 mas install 1278508951  # Trello
+mas install 1122008420  # Table Tool
+mas install 414855915   # WinArchiver Lite

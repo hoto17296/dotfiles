@@ -46,8 +46,10 @@ mkdir -p $XDG_CONFIG_HOME/karabiner
 \rm -f $XDG_CONFIG_HOME/karabiner/karabiner.json
 ln -s $DIR/karabiner.json $XDG_CONFIG_HOME/karabiner/karabiner.json
 
-mkdir -p $HOME/Notebooks
-ln -s $DIR/jupyter-app $XDG_CONFIG_HOME/jupyter-app
+mkdir -p ${HOME}/Notebooks
+JUPYTER_CONFIG_DIR=${XDG_CONFIG_HOME}/jupyter
+mkdir -p ${JUPYTER_CONFIG_DIR}
+ln -s ${DIR}/jupyter-app ${JUPYTER_CONFIG_DIR}/app
 
 require nvim
 ln -s $DIR/nvim $XDG_CONFIG_HOME/nvim
@@ -56,7 +58,7 @@ if ! [ -d $DEIN_DIR ]; then
   git clone https://github.com/Shougo/dein.vim.git $DEIN_DIR
 fi
 
-HACKGEN_VERSION=v2.0.0
+HACKGEN_VERSION=v2.3.2
 TMP_FILE=hackgen.zip
 wget -O ${TMP_FILE} https://github.com/yuru7/HackGen/releases/download/${HACKGEN_VERSION}/HackGen_${HACKGEN_VERSION}.zip
 unzip ${TMP_FILE}

@@ -1,0 +1,41 @@
+brew "arp-scan"
+brew "ghq"
+brew "icdiff"
+brew "jq"
+brew "neovim"
+brew "node@14", conflicts_with: ["node"]
+brew "nkf"
+brew "peco"
+brew "tree"
+brew "wget"
+brew "zplug"
+
+cask "hyper"
+cask "vivaldi"
+cask "firefox"
+cask "docker"
+cask "google-chrome"
+cask "google-japanese-ime"
+cask "google-drive"
+cask "postico"
+cask "appcleaner"
+cask "insomnia"
+cask "visual-studio-code"
+cask "microsoft-office"
+cask "karabiner-elements"
+cask "vlc"
+cask "typora"
+cask "wireshark"
+
+brew "mas"
+
+mas "1Password 7",      id: 1333542190
+mas "Slack",            id: 803453959
+mas "TweetDeck",        id: 485812721
+mas "Pixelmator",       id: 407963104
+mas "CotEditor",        id: 1024640650
+mas "Pocket",           id: 568494494
+mas "Kindle",           id: 405399194
+mas "Trello",           id: 1278508951
+mas "Table Tool",       id: 1122008420
+mas "WinArchiver Lite", id: 414855915

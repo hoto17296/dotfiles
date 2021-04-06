@@ -32,3 +32,6 @@
   rebase = merges
 [ghq]
   root = ~/Work
+[user]
+	email = mail@hoto.me
+	name = hoto

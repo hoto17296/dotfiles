@@ -1,6 +1,5 @@
 brew "arp-scan"
 brew "ghq"
-brew "icdiff"
 brew "jq"
 brew "neovim"
 brew "node@14", conflicts_with: ["node"]

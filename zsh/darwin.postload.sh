@@ -6,8 +6,6 @@ export LANG=ja_JP.UTF-8
 export LSCOLORS=gxfxcxdxbxegedabagacag
 alias l='ls -GFlah'
 
-alias diff='icdiff'
-
 alias python=python3
 alias pip=pip3
 

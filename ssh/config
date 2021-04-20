@@ -10,7 +10,8 @@ Host mrkch.jp
 Host gpu.mrkch.jp
   User hoto
 
-Host vpn.mrkch.jp
+Host wireguard
+  HostName 52.196.7.7
   User ubuntu
 
 Host *

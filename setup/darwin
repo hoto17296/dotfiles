@@ -73,6 +73,6 @@ require zsh
 dotalias zsh
 dotalias zshrc
 
-SCREEN_CAPTURES_DIR=$HOME/Pictures/Screen\ Captures
-mkdir -p $SCREEN_CAPTURES_DIR
-defaults write com.apple.screencapture location $SCREEN_CAPTURES_DIR
+SCREEN_CAPTURES_DIR="${HOME}/Pictures/Screen Captures"
+mkdir -p "${SCREEN_CAPTURES_DIR}"
+defaults write com.apple.screencapture location "${SCREEN_CAPTURES_DIR}"

@@ -14,6 +14,8 @@ alias pip3=/usr/bin/pip3
 alias jupyter-app="(cd $(ghq root)/github.com/hoto17296/jupyter-app && npm start)"
 alias jupyter-app-bash='docker exec -it --user jovyan jupyter-app bash'
 
+alias brew-update='brew update && brew upgrade --skip-cask-deps && brew cleanup'
+
 alias psql="docker run --rm -it --net=host postgres:11 psql"
 alias pg_dump='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_dump'
 alias pg_restore='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_restore'

@@ -31,7 +31,7 @@ brew "mas"
 mas "1Password 7",      id: 1333542190
 mas "Slack",            id: 803453959
 mas "TweetDeck",        id: 485812721
-mas "Pixelmator",       id: 407963104
+mas "Pixelmator Pro",       id: 1289583905
 mas "CotEditor",        id: 1024640650
 mas "Pocket",           id: 568494494
 mas "Kindle",           id: 405399194

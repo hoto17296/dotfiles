@@ -35,3 +35,5 @@
 [user]
 	email = mail@hoto.me
 	name = hoto
+[init]
+	defaultBranch = main

@@ -1,27 +1,26 @@
 {
     "editor.renderWhitespace": "boundary",
     "editor.tabSize": 2,
-    "files.associations": {
-        "*.jinja": "html"
-    },
+    "editor.formatOnSaveMode": "modifications",
     "[python]": {
         "editor.tabSize": 4
     },
-    "window.zoomLevel": 1,
     "editor.fontFamily": "HackGen35, Menlo, monospace",
-    "editor.formatOnSave": true,
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--line-length=120"
     ],
     "python.pythonPath": "/usr/bin/python3",
-    "python.defaultInterpreterPath": "python3",
+    "python.defaultInterpreterPath": "/usr/bin/python3",
     "python.formatting.blackPath": "/usr/local/bin/black",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
-    "extensions.ignoreRecommendations": true
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 2,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "workbench.startupEditor": "none"
 }

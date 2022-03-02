@@ -12,7 +12,6 @@
     ],
     "python.pythonPath": "/usr/bin/python3",
     "python.defaultInterpreterPath": "/usr/bin/python3",
-    "python.formatting.blackPath": "/usr/local/bin/black",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },

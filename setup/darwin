@@ -68,7 +68,7 @@ unzip ${TMP_FILE}
 cp HackGen_${HACKGEN_VERSION}/HackGen35-{Regular,Bold}.ttf ${HOME}/Library/Fonts
 rm -rf ${TMP_FILE} HackGen_${HACKGEN_VERSION}
 
-/usr/bin/pip3 install --user ipython
+/usr/bin/pip3 install --user ipython black
 
 require zsh
 dotalias zsh

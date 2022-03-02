@@ -2,7 +2,7 @@ brew "arp-scan"
 brew "ghq"
 brew "jq"
 brew "neovim"
-brew "node@14", conflicts_with: ["node"]
+brew "node@16", conflicts_with: ["node"]
 brew "nkf"
 brew "peco"
 brew "tree"
@@ -13,7 +13,7 @@ cask "hyper"
 cask "vivaldi"
 cask "firefox"
 cask "docker"
-cask "google-chrome"
+# cask "google-chrome"
 cask "google-japanese-ime"
 cask "google-drive"
 cask "postico"
@@ -29,7 +29,7 @@ cask "wireshark"
 brew "mas"
 
 mas "1Password 7",      id: 1333542190
-mas "Slack",            id: 803453959
+# mas "Slack",            id: 803453959
 mas "TweetDeck",        id: 485812721
 mas "Pixelmator Pro",       id: 1289583905
 mas "CotEditor",        id: 1024640650

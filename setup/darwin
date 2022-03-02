@@ -16,6 +16,7 @@ fi
 if ! enabled brew; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew bundle install --file $DIR/setup/Brewfile
 
 dotalias() { if ! [ -L $HOME/.$1 ]; then ln -s $DIR/$1 $HOME/.$1; fi }

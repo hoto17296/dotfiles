@@ -1,2 +1,2 @@
 export EDITOR=nvim
-export ZPLUG_HOME=/usr/local/opt/zplug
+export ZPLUG_HOME=/opt/homebrew/opt/zplug

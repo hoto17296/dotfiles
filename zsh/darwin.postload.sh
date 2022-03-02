@@ -1,6 +1,7 @@
 setopt ignoreeof # Ctrl+D でログアウトしない
 
-export PATH="$(ghq root)/github.com/hoto17296/bin:${HOME}/Library/Python/3.8/bin:/usr/local/opt/node@14/bin:$PATH"
+eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="$(ghq root)/github.com/hoto17296/bin:${HOME}/Library/Python/3.8/bin:/usr/local/opt/node@16/bin:$PATH"
 export LANG=ja_JP.UTF-8
 
 export LSCOLORS=gxfxcxdxbxegedabagacag

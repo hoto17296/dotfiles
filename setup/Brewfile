@@ -2,7 +2,7 @@ brew "arp-scan"
 brew "ghq"
 brew "jq"
 brew "neovim"
-brew "node@16", conflicts_with: ["node"]
+brew "node@16"
 brew "nkf"
 brew "peco"
 brew "tree"
@@ -38,3 +38,4 @@ mas "Kindle",           id: 405399194
 mas "Trello",           id: 1278508951
 mas "Table Tool",       id: 1122008420
 mas "WinArchiver Lite", id: 414855915
+mas "Microsoft Remote Desktop", id: 1295203466

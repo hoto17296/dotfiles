@@ -188,10 +188,10 @@
                                     "key_code": "page_up"
                                 },
                                 "to": {
-                                    "key_code": "open_bracket",
+                                    "key_code": "tab",
                                     "modifiers": [
-                                        "right_command",
-                                        "right_shift"
+                                        "left_control",
+                                        "left_shift"
                                     ]
                                 },
                                 "type": "basic"
@@ -201,10 +201,9 @@
                                     "key_code": "page_down"
                                 },
                                 "to": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "tab",
                                     "modifiers": [
-                                        "right_command",
-                                        "right_shift"
+                                        "left_control"
                                     ]
                                 },
                                 "type": "basic"

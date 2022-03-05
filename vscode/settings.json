@@ -21,5 +21,6 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "workbench.panel.defaultLocation": "right"
 }

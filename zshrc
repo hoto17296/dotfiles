@@ -133,6 +133,10 @@ alias gpl='git pull origin $(git current-branch)'
 alias gps='git push origin $(git current-branch)'
 
 
+# Docker
+alias dc='docker compose'
+
+
 # peco
 
 executable peco && source $HOME/.zsh/peco.sh

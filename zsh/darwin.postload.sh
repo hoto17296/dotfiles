@@ -20,6 +20,10 @@ alias psql="docker run --rm -it --net=host postgres:11 psql"
 alias pg_dump='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_dump'
 alias pg_restore='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_restore'
 
+# ImageMagick を Docker で動かす
+# https://qiita.com/hoto17296/items/2a89ac94ca9128b70a51
+alias imagemagick='docker run --rm -v "$(pwd)":/mnt -w /mnt imagemagick'
+
 # Jupyter Notebook 起動時にブラウザが開かない問題の対応
 # http://qiita.com/katsuyan/items/95bb7dbcd1671cc4e201
 export BROWSER=open

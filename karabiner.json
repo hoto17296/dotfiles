@@ -323,6 +323,44 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "option + t で Hyper にフォーカスする",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "osascript -e 'tell application \"Hyper\" to activate'"
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "option + m で Music にフォーカスする",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "shell_command": "osascript -e 'tell application \"Music\" to activate'"
+                                },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },

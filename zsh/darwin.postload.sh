@@ -5,6 +5,7 @@ export LANG=ja_JP.UTF-8
 
 export LSCOLORS=gxfxcxdxbxegedabagacag
 alias l='ls -GFlah'
+alias ll='ls -GFlah'
 
 alias python=/usr/bin/python3
 alias python3=/usr/bin/python3
@@ -23,6 +24,10 @@ alias pg_restore='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_rest
 # ImageMagick を Docker で動かす
 # https://qiita.com/hoto17296/items/2a89ac94ca9128b70a51
 alias imagemagick='docker run --rm -v "$(pwd)":/mnt -w /mnt imagemagick'
+
+# Mac で Homebrew を使わずに FFmpeg を使う
+# https://qiita.com/hoto17296/items/f9f1f22c8cde5c15da34
+alias ffmpeg='docker run --rm -v "$(pwd)":/mnt -w /mnt ffmpeg'
 
 # Jupyter Notebook 起動時にブラウザが開かない問題の対応
 # http://qiita.com/katsuyan/items/95bb7dbcd1671cc4e201

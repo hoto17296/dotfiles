@@ -16,7 +16,7 @@
         "*.ipynb": "jupyter-notebook"
     },
     "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 1,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"

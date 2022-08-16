@@ -29,7 +29,8 @@ cask "wireshark"
 
 brew "mas"
 
-mas "1Password 7",      id: 1333542190
+# TODO: Update to 1Password 8
+# mas "1Password 7",      id: 1333542190
 # mas "Slack",            id: 803453959
 mas "TweetDeck",        id: 485812721
 mas "Pixelmator Pro",       id: 1289583905

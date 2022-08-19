@@ -110,8 +110,8 @@
                                 "to_if_held_down": {
                                     "key_code": "backslash",
                                     "modifiers": [
-                                        "right_option",
-                                        "right_shift"
+                                        "right_command",
+                                        "right_option"
                                     ],
                                     "repeat": false
                                 },

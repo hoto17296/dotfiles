@@ -108,9 +108,9 @@
                                     "key_code": "delete_forward"
                                 },
                                 "to_if_held_down": {
-                                    "key_code": "spacebar",
+                                    "key_code": "backslash",
                                     "modifiers": [
-                                        "right_command",
+                                        "right_option",
                                         "right_shift"
                                     ],
                                     "repeat": false

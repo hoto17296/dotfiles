@@ -184,29 +184,6 @@
                         "description": "PgUp/PgDn でタブ移動",
                         "manipulators": [
                             {
-                                "description": "VSCode と Vivaldi は macOS の不具合で [ を含むショートカットが届かないので特別対応",
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.vivaldi\\.Vivaldi$",
-                                            "^com\\.microsoft\\.VSCode$"
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "page_up"
-                                },
-                                "to": {
-                                    "key_code": "left_arrow",
-                                    "modifiers": [
-                                        "right_command",
-                                        "right_option"
-                                    ]
-                                },
-                                "type": "basic"
-                            },
-                            {
                                 "from": {
                                     "key_code": "page_up"
                                 },
@@ -228,39 +205,6 @@
                                     "modifiers": [
                                         "right_command",
                                         "right_shift"
-                                    ]
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Vivaldi と VSCode に command + shift + [ が届かない問題の暫定対応",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "type": "frontmost_application_if",
-                                        "bundle_identifiers": [
-                                            "^com\\.vivaldi\\.Vivaldi$",
-                                            "^com\\.microsoft\\.VSCode$"
-                                        ]
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command",
-                                            "right_shift"
-                                        ]
-                                    }
-                                },
-                                "to": {
-                                    "key_code": "left_arrow",
-                                    "modifiers": [
-                                        "right_command",
-                                        "right_option"
                                     ]
                                 },
                                 "type": "basic"

@@ -1,16 +1,16 @@
 setopt ignoreeof # Ctrl+D でログアウトしない
 
+alias python=/usr/bin/python3
+alias python3=/usr/bin/python3
+alias pip=/usr/bin/pip3
+alias pip3=/usr/bin/pip3
+
 export PATH="$(ghq root)/github.com/hoto17296/bin:$(python3 -m site --user-base)/bin:$PATH"
 export LANG=ja_JP.UTF-8
 
 export LSCOLORS=gxfxcxdxbxegedabagacag
 alias l='ls -GFlah'
 alias ll='ls -GFlah'
-
-alias python=/usr/bin/python3
-alias python3=/usr/bin/python3
-alias pip=/usr/bin/pip3
-alias pip3=/usr/bin/pip3
 
 alias jupyter-app="(cd $(ghq root)/github.com/hoto17296/jupyter-app && npm start)"
 alias jupyter-app-bash='docker exec -it --user jovyan jupyter-app bash'

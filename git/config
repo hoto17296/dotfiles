@@ -33,7 +33,7 @@
 [ghq]
   root = ~/Work
 [user]
-	email = mail@hoto.me
-	name = hoto
+  email = hoto@y32.jp
+  name = Yuki Ishikawa
 [init]
-	defaultBranch = main
+  defaultBranch = main

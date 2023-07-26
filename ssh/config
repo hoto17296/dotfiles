@@ -2,21 +2,8 @@
 
 Include conf.d/*
 
-Host mrkch.jp
-  User hoto
-
-# Run following command to wake GPU server up.
-# ssh mrkch.jp sudo etherwake -b -i switch0 00:01:2e:71:c4:cf
-Host gpu.mrkch.jp
-  User hoto
-
-Host wireguard
-  HostName 52.196.7.7
-  User ubuntu
-
 Host *
-  #IdentityFile ~/.ssh/id_ed25519
-  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  IdentityFile ~/.ssh/id_ed25519
   ServerAliveInterval 60
   IPQoS cs1
 

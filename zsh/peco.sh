@@ -156,3 +156,15 @@ function peco-docker-containers() {
 
 zle -N peco-docker-containers
 bindkey '^x^k' peco-docker-containers
+
+
+# Azure Subscription を切り替え
+function peco-azure-switch() {
+  local subscription="$(az account list | jq -r '.[] | .id + " " + .name' | peco | awk '{print $1}' ORS=' ')"
+  [ -z "${subscription}" ] && return
+  BUFFER="az account set --subscription ${subscription}"
+  CURSOR=$#BUFFER
+}
+
+zle -N peco-azure-switch
+bindkey '^a^z' peco-azure-switch

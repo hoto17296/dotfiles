@@ -3,6 +3,7 @@
   "editor.tabSize": 2,
   "editor.fontFamily": "HackGen35, Menlo, monospace",
   "extensions.ignoreRecommendations": true,
+  "window.zoomLevel": 1,
   "workbench.startupEditor": "none",
   "workbench.panel.defaultLocation": "right"
 }

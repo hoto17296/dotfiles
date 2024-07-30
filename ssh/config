@@ -3,7 +3,8 @@
 Include conf.d/*
 
 Host *
-  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_default
+  AddKeysToAgent yes
   ServerAliveInterval 60
   IPQoS cs1
 

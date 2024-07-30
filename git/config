@@ -35,7 +35,7 @@
 [user]
   email = hoto@y32.jp
   name = Yuki Ishikawa
-  signingkey = ~/.ssh/id_default
+  signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIapEhnjsGCFv5hDh0mxNfLaUrnwKZne6jBSKnm/hoto"
 [init]
   defaultBranch = main
 [gpg]

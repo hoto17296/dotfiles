@@ -73,7 +73,7 @@ bindkey '^g' peco-git-grep
 function peco-ssh() {
   local dir="$HOME/.ssh"
   [ -d $dir ] || return
-  local host=$(cat $dir/config $dir/conf.d/* | grep "^\s*Host " | sed s/"[\s ]*Host "// | grep -v "^\*$" | sort | peco --prompt "SSH>")
+  local host=$(cat $dir/config $dir/conf.d/* | grep "^\s*Host " | grep -v "*" | sed s/"[\s ]*Host "// | sort | peco --prompt "SSH>")
   [ -z "$host" ] && return
   BUFFER="ssh $host"
   CURSOR=$#BUFFER

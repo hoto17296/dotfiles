@@ -112,6 +112,11 @@ setopt inc_append_history     # インクリメンタルサーチに追加
 setopt share_history          # 端末間で履歴を共有
 
 
+# SSH
+
+grep -sl "PRIVATE" ${HOME}/.ssh/* | xargs ssh-add
+
+
 # Git
 
 alias g='git'

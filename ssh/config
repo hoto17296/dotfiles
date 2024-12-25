@@ -1,11 +1,7 @@
 # vim: set ft=sshconfig :
 
-Include conf.d/*
-
 Host *
-  IdentityFile ~/.ssh/id_default
-  AddKeysToAgent yes
   ServerAliveInterval 60
   IPQoS cs1
 
-XAuthLocation /usr/X11/bin/xauth
+Include conf.d/*

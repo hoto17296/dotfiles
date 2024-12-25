@@ -5,7 +5,7 @@ alias python3=/usr/bin/python3
 alias pip=/usr/bin/pip3
 alias pip3=/usr/bin/pip3
 
-export PATH="$(ghq root)/github.com/hoto17296/bin:$(python3 -m site --user-base)/bin:$PATH"
+export PATH="$(ghq root)/github.com/hoto17296/bin:$(python3 -m site --user-base)/bin:${HOME}/.rd/bin:$PATH"
 export LANG=ja_JP.UTF-8
 
 export LSCOLORS=gxfxcxdxbxegedabagacag

@@ -1,14 +1,1 @@
-*.swp
 .DS_Store
-.vimrc.local
-.node-version
-.ruby-version
-npm-debug.log
-dump.rdb
-.autoenv.zsh
-.venv
-.idea
-__pycache__
-*.egg-info
-*.pyc
-*.code-workspace

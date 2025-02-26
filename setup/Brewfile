@@ -1,39 +1,41 @@
 brew "arp-scan"
 brew "ghq"
 brew "gnu-sed"
+brew "hashicorp/tap/terraform"
 brew "jq"
 brew "neovim"
-brew "node@18"
 brew "nkf"
+brew "node"
 brew "peco"
 brew "tree"
 brew "wget"
 brew "zplug"
 
-cask "hyper"
-cask "vivaldi"
-cask "firefox"
-cask "rancher"
+
+cask "1password"
+cask "appcleaner"
+cask "box-drive"
 # cask "google-chrome"
 cask "google-japanese-ime"
-cask "google-drive"
-cask "postico"
-cask "appcleaner"
-cask "visual-studio-code"
-cask "microsoft-office"
+cask "ghostty"
 cask "karabiner-elements"
-cask "vlc"
+cask "rancher"
+cask "logi-options+"
+cask "microsoft-teams"
+cask "postico"
 cask "typora"
-cask "wireshark"
+cask "visual-studio-code"
+cask "vivaldi"
 
 brew "mas"
 
-# TODO: Update to 1Password 8
-# mas "1Password 7",      id: 1333542190
-# mas "Slack",            id: 803453959
+mas "CotEditor",            id: 1024640650
+mas "Microsoft Word",       id: 462054704
+mas "Microsoft Excel",      id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
 mas "Pixelmator Pro",       id: 1289583905
-mas "CotEditor",        id: 1024640650
-mas "Kindle",           id: 405399194
-mas "Table Tool",       id: 1122008420
-mas "WinArchiver Lite", id: 414855915
-mas "Microsoft Remote Desktop", id: 1295203466
+# mas "Slack",                id: 803453959
+mas "Table Tool",           id: 1122008420
+mas "UTM Virtual Machines", id: 1538878817
+mas "WinArchiver Lite",     id: 414855915
+mas "Windows App",          id: 1295203466

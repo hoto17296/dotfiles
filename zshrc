@@ -14,25 +14,16 @@ PRELOAD_SCRIPT=$HOME/.zsh/$(uname | awk '{print tolower($0)}').preload.sh
 
 export XDG_CONFIG_HOME=${HOME}/.config
 export GOPATH=${XDG_CONFIG_HOME}/go
-export JUPYTER_CONFIG_DIR=${XDG_CONFIG_HOME}/jupyter
 export PATH=${GOPATH}/bin:${PATH}
 
 bindkey -d # キーバインドリセット
 bindkey -e # emacsモード
 
 alias pag='ps aux | grep'
+
 alias v=$EDITOR
 alias vi=$EDITOR
 alias vim=$EDITOR
-
-
-_parallel () {
-  if [ $# -lt 2 ]; then
-    echo -e "Usage:\n  parallel <N> <command>"
-    return 1
-  fi
-  seq $1 | xargs -I{} -P $@
-}
 
 setopt correct         # typo補完
 setopt nobeep          # beep音鳴らさない
@@ -49,24 +40,10 @@ function executable {
 }
 
 
-# Python venv 設定
-
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-
-function venv-activated {
-  executable deactivate
-}
-
-
 # プラグイン設定
 
 source $ZPLUG_HOME/init.zsh
 
-export AUTOENV_FILE_ENTER='.autoenv.zsh'
-export AUTOENV_FILE_LEAVE='.autoenv.zsh'
-export AUTOENV_HANDLE_LEAVE=1
-
-zplug "Tarrasch/zsh-autoenv"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 

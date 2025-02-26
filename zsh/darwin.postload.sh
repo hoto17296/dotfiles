@@ -5,33 +5,14 @@ alias python3=/usr/bin/python3
 alias pip=/usr/bin/pip3
 alias pip3=/usr/bin/pip3
 
-export PATH="$(ghq root)/github.com/hoto17296/bin:$(python3 -m site --user-base)/bin:${HOME}/.rd/bin:$PATH"
+export PATH="$(python3 -m site --user-base)/bin:${HOME}/.rd/bin:$PATH"
 export LANG=ja_JP.UTF-8
 
 export LSCOLORS=gxfxcxdxbxegedabagacag
 alias l='ls -GFlah'
 alias ll='ls -GFlah'
 
-alias jupyter-app="(cd $(ghq root)/github.com/hoto17296/jupyter-app && npm start)"
-alias jupyter-app-bash='docker exec -it --user jovyan jupyter-app bash'
-
 alias brew-update='brew update && brew upgrade --skip-cask-deps && brew cleanup'
-
-alias psql="docker run --rm -it --net=host postgres:11 psql"
-alias pg_dump='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_dump'
-alias pg_restore='docker run --rm -it -v $(pwd):/tmp -w /tmp postgres:11 pg_restore'
-
-# ImageMagick を Docker で動かす
-# https://qiita.com/hoto17296/items/2a89ac94ca9128b70a51
-alias imagemagick='docker run --rm -v "$(pwd)":/mnt -w /mnt imagemagick'
-
-# Mac で Homebrew を使わずに FFmpeg を使う
-# https://qiita.com/hoto17296/items/f9f1f22c8cde5c15da34
-alias ffmpeg='docker run --rm -v "$(pwd)":/mnt -w /mnt ffmpeg'
-
-# Jupyter Notebook 起動時にブラウザが開かない問題の対応
-# http://qiita.com/katsuyan/items/95bb7dbcd1671cc4e201
-export BROWSER=open
 
 
 # ディレクトリ移動時に ls の結果を表示する
@@ -64,11 +45,6 @@ function force-alphanumeric {
   esac
 }
 add-zsh-hook precmd force-alphanumeric
-
-
-# rm でゴミ箱に移動
-
-executable rmtrash && alias rm='rmtrash'
 
 
 # ディレクトリ移動時のフックを明示的に呼ぶための関数

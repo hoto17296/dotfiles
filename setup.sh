@@ -46,16 +46,19 @@ symlink ${DIR}/karabiner.json ${XDG_CONFIG_HOME}/karabiner/karabiner.json
 symlink ${DIR}/nvim ${XDG_CONFIG_HOME}/nvim
 DEIN_DIR=${HOME}/.cache/dein/repos/github.com/Shougo/dein.vim
 if ! [ -d ${DEIN_DIR} ]; then
-  git clone https://github.com/Shougo/dein.vim.git ${DEIN_DIR}
+  git clone -q https://github.com/Shougo/dein.vim.git ${DEIN_DIR}
 fi
 
 # Font
-HACKGEN_VERSION=v2.10.0
-TMP_FILE=hackgen.zip
-wget -O ${TMP_FILE} https://github.com/yuru7/HackGen/releases/download/${HACKGEN_VERSION}/HackGen_${HACKGEN_VERSION}.zip
-unzip ${TMP_FILE}
-cp HackGen_${HACKGEN_VERSION}/HackGen35-{Regular,Bold}.ttf ${HOME}/Library/Fonts
-rm -rf ${TMP_FILE} HackGen_${HACKGEN_VERSION}
+FONT_DIR=${HOME}/Library/Fonts
+if [ -n "$(ls ${FONT_DIR} | grep HackGenn)" ]; then
+  HACKGEN_VERSION=v2.10.0
+  TMP_FILE=hackgen.zip
+  wget -q -O ${TMP_FILE} https://github.com/yuru7/HackGen/releases/download/${HACKGEN_VERSION}/HackGen_${HACKGEN_VERSION}.zip
+  unzip -q ${TMP_FILE}
+  cp HackGen_${HACKGEN_VERSION}/HackGen35-{Regular,Bold}.ttf ${FONT_DIR}
+  rm -rf ${TMP_FILE} HackGen_${HACKGEN_VERSION}
+fi
 
 # zsh
 symlink ${DIR}/zsh ${HOME}/.zsh

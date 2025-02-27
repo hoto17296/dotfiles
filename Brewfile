@@ -1,7 +1,6 @@
 brew "arp-scan"
 brew "ghq"
 brew "gnu-sed"
-brew "hashicorp/tap/terraform"
 brew "jq"
 brew "neovim"
 brew "nkf"
@@ -11,6 +10,8 @@ brew "tree"
 brew "wget"
 brew "zplug"
 
+tap "hashicorp/tap"
+brew "hashicorp/tap/terraform"
 
 cask "1password"
 cask "appcleaner"

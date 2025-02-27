@@ -5,5 +5,6 @@
   "extensions.ignoreRecommendations": true,
   "window.zoomLevel": 1,
   "workbench.startupEditor": "none",
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "git.confirmSync": false
 }

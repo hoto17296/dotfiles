@@ -4,6 +4,7 @@
 # ※ TODO: 動作確認できていない
 
 # Spotlight > 検索結果
+# TODO: これなぜか反映されない
 defaults write com.apple.spotlight orderedItems -array \
   '{ "enabled" = 0; "name" = "PDF"; }' \
   '{ "enabled" = 0; "name" = "MENU_SPOTLIGHT_SUGGESTIONS"; }' \
@@ -67,14 +68,19 @@ defaults write com.apple.dock mru-spaces -bool false
 # キーボード > キーのリピート速度 (最速 2, ※小さいほど速い)
 defaults write -g KeyRepeat -int 2
 
-# キーボード > キーボードショートカット > 次のウィンドウを操作対象にする
+# キーボード > キーボードショートカット > キーボード > 次のウィンドウを操作対象にする
 # ※「macOS が日本語設定」かつ「キーボードが US 配列」の場合に、macOS 側の ⌘ + @ ショートカットを無効化しないと
 #   一部のアプリ (Vivaldi や VSCode など) で ⌘ + [ ショートカットが効かなくなる問題があるため
 #   参考: https://aotamasaki.hatenablog.com/entry/command_with_open_bracket_is_unavailable
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 27 "<dict><key>enabled</key><false/></dict>"
+
+# キーボード > キーボードショートカット > 入力ソース > 前の入力ソースを選択
+# TODO: これ ^ + space が割り当てられているので無効化して、Spotlight にこのショートカットを割り当てたい
 
 # トラックパッド > 軌道の速さ (最大 3.0)
 defaults write -g com.apple.trackpad.scaling -float 2.0
 
 # トラックパッド > タップでクリック
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+echo "OK"

@@ -8,7 +8,7 @@
 
 ### システム環境設定
 ``` console
-$ curl -fsSL https://raw.github.com/hoto17296/dotfiles/master/defaults.sh | bash -eu
+$ curl -fsSL https://raw.githubusercontent.com/hoto17296/dotfiles/HEAD/defaults.sh | bash -eu
 ```
 
 ### SSH 秘密鍵を設定

@@ -269,7 +269,7 @@
                         ]
                     },
                     {
-                        "description": "option + t で Hyper にフォーカスする",
+                        "description": "option + t で Ghostty にフォーカスする",
                         "manipulators": [
                             {
                                 "from": {
@@ -281,7 +281,7 @@
                                     }
                                 },
                                 "to": {
-                                    "shell_command": "osascript -e 'tell application \"Hyper\" to activate'"
+                                    "shell_command": "osascript -e 'tell application \"Ghostty\" to activate'"
                                 },
                                 "type": "basic"
                             }

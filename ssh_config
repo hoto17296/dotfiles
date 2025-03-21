@@ -3,5 +3,6 @@
 Host *
   ServerAliveInterval 60
   IPQoS cs1
+  SetEnv TERM=xterm-256color  # set terminfo for Ghostty
 
 Include conf.d/*

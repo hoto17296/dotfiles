@@ -38,9 +38,8 @@ rm -f ${VSCODE_DIR}/settings.json
 symlink ${DIR}/vscode/settings.json ${VSCODE_DIR}/settings.json
 
 # Karabiner-Elements
-mkdir -p ${XDG_CONFIG_HOME}/karabiner
-rm -f ${XDG_CONFIG_HOME}/karabiner/karabiner.json
-symlink ${DIR}/karabiner.json ${XDG_CONFIG_HOME}/karabiner/karabiner.json
+rm -f ${XDG_CONFIG_HOME}/karabiner
+symlink ${DIR}/karabiner ${XDG_CONFIG_HOME}/karabiner
 
 # Neovim
 symlink ${DIR}/nvim ${XDG_CONFIG_HOME}/nvim

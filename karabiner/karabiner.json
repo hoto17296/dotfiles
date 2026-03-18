@@ -137,6 +137,19 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "option + shift + v でリポジトリを選択して VSCode を開く",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": { "shell_command": "PATH=$PATH:/opt/homebrew/bin/; repos=\"$(ghq list | mac-menu)\"; [[ -n \"$repos\" ]] && code \"$(ghq root)/$repos\"" },
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },

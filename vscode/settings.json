@@ -1,4 +1,7 @@
 {
+  "dev.containers.defaultExtensions": [
+    "anthropic.claude-code"
+  ],
   "editor.renderWhitespace": "boundary",
   "editor.tabSize": 2,
   "editor.fontFamily": "HackGen35, Menlo, monospace",
@@ -9,8 +12,7 @@
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "terminal.integrated.stickyScroll.enabled": false,
   "git.confirmSync": false,
-  "git.branchProtection": ["main"],
-  "claudeCode.preferredLocation": "panel",
+  "claudeCode.preferredLocation": "sidebar",
   "prisma.hidePrisma6Prompts": true,
   "pgsql.connections": [],
   "pgsql.serverGroups": [],

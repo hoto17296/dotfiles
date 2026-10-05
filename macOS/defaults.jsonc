@@ -1,0 +1,188 @@
+{
+  // 全アプリ共通
+  "NSGlobalDomain": {
+    // キーボード > キーのリピート速度 (最速 2, ※小さいほど速い)
+    "KeyRepeat": 2,
+    // トラックパッド > 軌道の速さ (最大 3.0)
+    "com.apple.trackpad.scaling": 2.0,
+    // キーボード > キーボードショートカット > 修飾キー > Apple内蔵キーボード
+    // ※ キー名末尾は <VendorID>-<ProductID>-0 で、内蔵キーボードは 0-0-0
+    "com.apple.keyboard.modifiermapping.0-0-0": {
+      "host": "currentHost",
+      "value": [
+        {
+          // Caps Lock キー → Control キー
+          // ※ 値は 0x700000000 + HID Usage ID (Caps Lock = 0x39, 左 Control = 0xE0)
+          "HIDKeyboardModifierMappingSrc": 30064771129,
+          "HIDKeyboardModifierMappingDst": 30064771300
+        }
+      ]
+    }
+  },
+
+  // Spotlight > 検索結果 → 検索対象「アプリケーション」「計算機」以外チェックを外す
+  // ※ macOS 26 で Spotlight が刷新され、旧 orderedItems は参照されなくなった
+  // ※ EnabledPreferenceRules はキー名に反して「オフにした項目」の一覧になっているらしい
+  "com.apple.Spotlight": {
+    "EnabledPreferenceRules": {
+      "value": [
+        "Custom.relatedContents",
+        "Domain.PDF",
+        "Domain.SPREADSHEETS",
+        "Domain.MUSIC",
+        "Domain.MOVIES",
+        "Domain.IMAGES",
+        "com.apple.AppStore",
+        "com.box.desktop",
+        "com.microsoft.Powerpoint",
+        "com.apple.Safari",
+        "com.microsoft.rdc.macos",
+        "com.apple.iCal",
+        "com.apple.tips",
+        "com.apple.iBooksX",
+        "com.apple.VoiceMemos",
+        "com.apple.podcasts",
+        "com.apple.mail",
+        "com.apple.MobileSMS",
+        "com.apple.Notes",
+        "com.apple.reminders",
+        "com.apple.Dictionary",
+        "com.apple.Photos",
+        "com.apple.AddressBook",
+        "System.iphoneApps",
+        "System.folders",
+        "System.menuItems",
+        "System.documents"
+      ]
+    },
+    "DisabledUTTypes": {
+      "value": [
+        "com.adobe.pdf",
+        "com.apple.iwork.numbers.numbers",
+        "com.apple.iwork.numbers.sffnumbers",
+        "com.apple.iwork.numbers.template",
+        "com.apple.localized-pdf-bundle",
+        "com.apple.protected-mpeg-4-audio",
+        "com.apple.quicktime-movie",
+        "com.microsoft.excel.sheet.binary.macroenabled",
+        "com.microsoft.excel.xls",
+        "org.openxmlformats.spreadsheetml.sheet",
+        "org.openxmlformats.spreadsheetml.sheet.macroenabled",
+        "public.3gpp",
+        "public.3gpp2",
+        "public.audio",
+        "public.image",
+        "public.movie",
+        "public.mpeg",
+        "public.mpeg-4",
+        "public.mpeg-4-audio",
+        "public.mpeg-video",
+        "public.spreadsheet"
+      ]
+    }
+  },
+
+  // アクセシビリティ > ポインタコントロール > トラックパッドオプション
+  // トラックパッド
+  "com.apple.AppleMultitouchTrackpad": {
+    // 3本指のドラッグ
+    "TrackpadThreeFingerDrag": true,
+    // タップでクリック
+    "Clicking": true
+  },
+
+  // 外付けの Bluetooth トラックパッド用 (内容は上と同様)
+  "com.apple.driver.AppleBluetoothMultitouch.trackpad": {
+    "TrackpadThreeFingerDrag": true,
+    "Clicking": true
+  },
+
+  // メニューバーのみ > 時計 > 時計のオプション
+  "com.apple.menuextra.clock": {
+    // 時刻 > 秒を表示
+    "ShowSeconds": true
+  },
+
+  // デスクトップと Dock
+  "com.apple.dock": {
+    // Dock > サイズ (最小 16, 最大 128)
+    "tilesize": 16,
+    // Dock > 画面上の位置
+    "orientation": "left",
+    // Dock > Dock を自動的に表示/非表示
+    "autohide": true,
+    // Mission Control > 操作スペースを自動的に並べ替える
+    "mru-spaces": false,
+    // ホットコーナー > 左上 / 右上 / 左下 / 右下 (1 = 何もしない)
+    "wvous-tl-corner": 1,
+    "wvous-tr-corner": 1,
+    "wvous-bl-corner": 1,
+    "wvous-br-corner": 1
+  },
+
+  // デスクトップと Dock > デスクトップとステージマネージャ
+  "com.apple.WindowManager": {
+    // 壁紙をクリックしてデスクトップを表示 (false = 「ステージマネージャ使用時のみ」)
+    "EnableStandardClickToShowDesktop": false
+  },
+
+  // キーボード > キーボードショートカット
+  "com.apple.symbolichotkeys": {
+    "AppleSymbolicHotKeys": {
+      "type": "dict-add",
+      "value": [
+        {
+          // キーボード > 次のウィンドウを操作対象にする (⌘ + @)
+          // ※「macOS が日本語設定」かつ「キーボードが US 配列」の場合に、macOS 側の ⌘ + @ ショートカットを無効化しないと
+          //   一部のアプリ (Vivaldi や VSCode など) で ⌘ + [ ショートカットが効かなくなる問題があるため
+          //   参考: https://aotamasaki.hatenablog.com/entry/command_with_open_bracket_is_unavailable
+          "key": 27,
+          "value": {
+            "enabled": false
+          }
+        },
+        {
+          // 入力ソース > 前の入力ソースを選択 (^ + Space) → 無効化
+          "key": 60,
+          "value": {
+            "enabled": false
+          }
+        },
+        {
+          // Spotlight > Spotlight 検索を表示 → ^ + Space を割り当て
+          "key": 64,
+          "value": {
+            "enabled": true,
+            "value": {
+              "type": "standard",
+              "parameters": [32, 49, 262144]
+            }
+          }
+        }
+      ]
+    }
+  },
+
+  // コントロールセンター
+  "com.apple.controlcenter": {
+    // バッテリー > 割合 (%) を表示
+    "BatteryShowPercentage": {
+      "host": "currentHost",
+      "value": true
+    },
+    // サウンド > メニューバーに常に表示 (18 = 常に表示)
+    "Sound": {
+      "host": "currentHost",
+      "value": 18
+    }
+  },
+
+  // アクセシビリティ > ズーム機能
+  // ※ このドメインへの書き込みには、実行するターミナルに「フルディスクアクセス」の権限が必要
+  "com.apple.universalaccess": {
+    // スクロールジェスチャと修飾キーを使って拡大縮小
+    "closeViewScrollWheelToggle": true,
+    // 修飾キー (^ Control = 262144, ⌥ Option = 524288, ⌘ Command = 1048576 の和)
+    "closeViewScrollWheelModifiersInt": 262144
+  }
+}

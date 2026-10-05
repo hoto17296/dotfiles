@@ -1,22 +1,10 @@
 # dotfiles
 
-## Setup macOS
-
-### インターネットに接続
-
-### Apple アカウントでサインイン
-
-### システム環境設定
-``` console
-$ curl -fsSL https://raw.githubusercontent.com/hoto17296/dotfiles/HEAD/defaults.sh | bash -eu
-```
+## macOS の各種設定
+→ [macOS/README.md](macOS/README.md)
 
 ### SSH 秘密鍵を設定
-
-### Command Line Developer Tools をインストール
-``` console
-$ xcode-select --install
-```
+(略)
 
 ### リポジトリを clone
 ``` console

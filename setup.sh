@@ -25,6 +25,7 @@ brew bundle install --file ${DIR}/Brewfile
 if ! [ -f ${HOME}/.npmrc ]; then cp ${DIR}/npmrc ${HOME}/.npmrc; fi
 symlink ${DIR}/git ${XDG_CONFIG_HOME}/git
 symlink ${DIR}/peco ${XDG_CONFIG_HOME}/peco
+symlink ${DIR}/ghostty ${XDG_CONFIG_HOME}/ghostty
 
 # SSH
 mkdir -p ${HOME}/.ssh/conf.d
